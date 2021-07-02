@@ -1,0 +1,65 @@
+﻿@{
+    var culture = CulutureServices.GetCulture();   //  get culture name from  services
+
+    var dir = "ltr";
+    var lang = "en";
+    if (culture == "ar")
+    {
+        dir = "rtl";
+        lang = "ar";
+
+    }
+}
+
+<!DOCTYPE html>
+<html lang="@lang">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Al Amal </title>
+    <link rel="shortcut icon" href="~/img/hospitalLogo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="~/css/all.min.css">
+    <link rel="stylesheet" href="~/css/pagination.css">
+    <link rel="stylesheet" href="~/css/animate.min.css">
+    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="~/css/custom.css">
+</head>
+
+<body dir="@dir" class="@dir">
+    <div class="wapper">
+        @await Component.InvokeAsync("Header")
+
+
+        <main role="main" class="@dir">
+
+            @RenderBody()
+        </main>
+
+        @await Component.InvokeAsync("Footer")
+
+        <a href="#topTitle" class="scroll-top">
+            <i class="fas fa-angle-up fa-2x"></i>
+        </a>
+        <partial name="_settingBox" />
+
+    </div>
+    <div class="content-loader">
+        <div id="main-loader" class='loader'></div>
+    </div>
+
+    <script src="~/js/lib/jquery/jquery.min.js"></script>
+    <script src="~/js/wow.min.js"></script>
+
+    <script src="~/js/index.js"></script>
+    <script src="~/js/pagination.js"></script>
+    <script src="~/js/custom.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

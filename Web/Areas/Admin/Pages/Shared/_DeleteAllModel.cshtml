@@ -1,0 +1,34 @@
+﻿<form id="deleteAllForm"
+      method="Post"
+      enctype="multipart/form-data"
+      data-ajax="true"
+      data-ajax-begin="beginDelete"
+      data-ajax-success="successDelete"
+      data-ajax-failure="failure"
+      data-ajax-complete="complete"
+      asp-page-handler="Delete"
+      asp-page="Index"
+      asp-area="admin"
+      name="create">
+    @Html.AntiForgeryToken()
+    <div class="modal fade show" id="modal-overlay" style="display: none; padding-right: 17px;" aria-modal="true" role="dialog">
+        <div class="modal-dialog modal-dialog-centered text-capitalize">
+            <div class="modal-content">
+                <div id="overlay" class="overlay d-none text-primary">
+                    <i class="fas fa-2x fa-sync fa-spin"></i>
+                </div>
+                <div class="modal-header  text-danger justify-content-center bg-dark">
+                    <h4 class="modal-title">@Localizer["warning"].Value</h4>
+                </div>
+                <div class="modal-body text-center">
+                    <p>@Localizer["delete msg"]</p>
+                </div>
+                <div class="modal-footer   justify-content-center">
+                     <button id="btn-delete-all" type="submit" class="btn btn-danger text-capitalize">@Localizer["submit"].Value</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+</form>

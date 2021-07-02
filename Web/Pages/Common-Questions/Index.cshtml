@@ -1,0 +1,39 @@
+﻿@page
+@model Web.Pages.Common_Questions.IndexModel
+@{
+    var questions = Model.questions;
+    var title= "common question";
+}
+<partial name="_coverPage" model="@title" />
+
+<section class="questions">
+    <div class="container">
+        <div class="question-content section-settings">
+
+            @foreach (var question in questions)
+            {
+                <div class="card animate" data-animate="zoomIn">
+                    <div class="header">
+                        <h2>@( Model.lang == "en" ? question.Title : question.TitleAr)</h2>
+                        <i class="question-toggle fas fa-plus"></i>
+                    </div>
+                    <div class="body questionBody">
+
+                        <p>@(Model.lang == "en" ? question.description : question.descriptionAr)</p>
+
+                        <div class="imge">
+                            @*<img src="@Url.Content(question.Path1)" alt="question image">*@
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            }
+
+
+        </div>
+    </div>
+</section>

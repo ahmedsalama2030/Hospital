@@ -1,0 +1,88 @@
+﻿@page
+@model Web.Pages.Doctors.IndexModel
+ 
+ @{
+     var title = "doctors";
+     var lang = Model.lang;
+     var pagination = Model.pagination;
+
+}
+ <partial name="_coverPage" model="@title" />
+@Html.AntiForgeryToken();
+<section class="doctor">
+    <div class="container">
+        <div class="row">
+            <div class="search " >
+                <div class="find-doctor animate" data-animate="zoomIn">
+                    <h2>@Localizer["findthedoctor"].Value </h2>
+                    <form id="doctorForm"
+                          
+                          data-ajax="true"
+                          data-ajax-method="post"
+                          data-ajax-mode="replace"
+                          data-ajax-loading="#loader"
+                          data-ajax-begin="begin"
+                          data-ajax-update="#update"
+                         data-ajax-complete="complete"
+                          data-ajax-success="success">
+                        @Html.AntiForgeryToken()
+                        <div class="content">
+                            <div class="description">@Localizer["doctorname"].Value</div>
+                            <input asp-for="@Model.doctorname" type="search"    >
+                            <div>
+                                <button id="btn-submit" type="submit" class="btn">@Localizer["search"].Value</button>
+                                <span id="loader" style="display:none" class="fa  fa-spin  fa-spinner"></span>
+                            </div>
+
+
+                        </div>
+                    </form>
+                </div>
+                <partial name="_contactus">
+
+            </div>
+            <div class="details">
+                <div>
+                    <h2>@Localizer["AssociatedDoctorsingalaa"]</h2>
+                    <p>@Localizer["Associatedmessage"]</p>
+                </div>
+                <div class="container-doctor" id="update">
+                    @foreach (var doctor in Model.Doctors)
+                    {
+                        <div class="box animate  " data-animate="zoomIn">
+                            <img onerror="this.onerror=null;this.src='/img/doctor.jpg'" src="@Url.Content("~/"+doctor.PhotoPath)" alt="">
+                            <div class="info">
+                                <h3>@Localizer["Dr /"] @(Model.lang == "en"? doctor.Name: doctor.NameAr) </h3>
+                                <p>
+                                    @(Model.lang == "en"? doctor.Special: doctor.SpecialAr)
+                                </p>
+
+                                <a   asp-page="Detail"   asp-route-Id="@doctor.Id"> @Localizer["more"].Value</a>
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+                @await Component.InvokeAsync("Pagination", new PaginationConfig { paginationHeader = pagination, Url = "/Doctors/Index?handler=Filter", ShowInfo = true, LengthPage = 4 })
+
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+
+    @await Html.PartialAsync("/Pages/Shared/_ValidationScriptsPartial.cshtml")
+    <script>
+        begin = function () {
+            $("#btn-submit").addClass("send-btn");
+        }
+        success = function () {
+            $("#doctorForm").get(0).reset();
+        }
+        complete = function () {
+            $("#btn-submit").remove("send-btn");
+
+        }
+    </script>
+}

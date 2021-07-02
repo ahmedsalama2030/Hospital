@@ -1,0 +1,20 @@
+﻿ @model  string;
+@{ 
+    var culture = CulutureServices.GetCulture();   //  get culture name from  services
+
+}
+<section class="cover-page ">
+    <div class="links">
+        <div  class="name animate" data-animate="@(culture=="en"?"slideInLeft":"slideInRight")">
+            <span > @Localizer[Model].Value </span>
+        </div>
+        <div  class="link animate" data-animate="@(culture=="en"?"slideInRight":"slideInLeft")" >
+            <a asp-page="/Home/Index"  >@Localizer["home"].Value</a>
+            <span> / </span>
+            <span>@Localizer[Model].Value</span> 
+        </div>
+
+    </div>
+    <div class="overlay"></div>
+</section>
+  

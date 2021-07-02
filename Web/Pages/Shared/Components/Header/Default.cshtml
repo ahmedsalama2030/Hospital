@@ -1,0 +1,84 @@
+﻿@model HeaderFooterDetailsDto
+@{ 
+    var culture = CulutureServices.GetCulture();   //  get culture name from  services 
+}
+    <!-- Top Title -->
+    <section id="topTitle" class="topTitle">
+        <!-- top -->
+        <div class="top">
+            <div class="row">
+                <!-- info start -->
+                <div class="info animate" data-animate="@(culture=="en"?"slideInLeft":"slideInRight")">
+                    <span class="info-container">
+                        <span class="icon"><i class="fas fa-phone-alt "></i></span>
+                        <span class="detail">@Model.PhoneNumbermain</span>
+                    </span>
+                    <span class="info-container">
+                        <span class="icon"><i class="fas fa-clock"></i></span>
+                        <span class="detail">@Model.JobTimeDetails</span>
+                    </span>
+                    <span class="info-container">
+                        <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <span class="detail">
+                            @(culture == "en"? @Model.Address : @Model.AddressAr)
+                        </span>
+                    </span>
+
+                </div>
+                <!-- info end -->
+                <!-- social start -->
+                <div class="social animate" data-animate="@(culture=="en"?"slideInRight":"slideInLeft")">
+                    <a href="@Model.FacebookPath"><i class="fab fa-facebook-f"></i></a>
+                    <a href="@Model.YoutubePath"><i class="fab fa-youtube"></i></a>
+                    <a href="@Model.LinkedInPath"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <!-- ./social -->
+             </div>
+        </div>
+        <!-- ./top -->
+        <!-- middel  logo-->
+        <div class="middel">
+            <div    class="logo  animate" data-animate="@(culture=="en"?"slideInLeft":"slideInRight")"   >
+                <img src="@Url.Content("~/"+Model.SiteLogoPath)" onerror="this.onerror=null;this.src='/img/hospitalLogo.png'" alt="img logo">
+                <span>
+                    <a asp-page="Home">
+                        @(culture == "en"? @Model.SiteName : @Model.SiteNameAr)
+                    </a>
+                </span>
+            </div>
+            <div   class="contact animate" data-animate="@(culture=="en"?"slideInRight":"slideInLeft")">
+                <span>
+                    <i class="fas fa-phone-alt"></i>
+                    <span>@Model.PhoneNumbermain</span>
+                </span>
+                <span>
+                    <i class="fas fa-phone-alt"></i>
+                    <span>@Model.PhoneNumberSecond</span>
+                </span>
+
+            </div>
+        </div>
+        <!-- ./middel  logo -->
+    </section>
+    <header>
+
+        <!-- menus -->
+        <div class="menus">
+            <div class="toggle">
+                <i class="btn-toggle fas fa-bars"></i>
+            </div>
+            <ul class="links">
+                <li><a asp-page="/home/index"   is-active-user>  @Localizer["home"].Value  </a> </li>
+                <li><a asp-page="/Doctors/index"  is-active-user>@Localizer["doctors"].Value</a></li>
+                <li><a asp-page="/Departments/index"  is-active-user>@Localizer["departments"].Value</a></li>
+                <li><a asp-page="/Clinics-Reservation/index"  is-active-user>@Localizer["clinicsreservation"].Value </a></li>
+                <li><a asp-page="/News/index"  is-active-user>@Localizer["news"].Value</a></li>
+                <li><a asp-page="/Common-Questions/index"  is-active-user>@Localizer["commonquestion"].Value</a></li>
+                <li><a asp-page="/AboutUs/index"  is-active-user>@Localizer["aboutus"].Value</a></li>
+                <li><a asp-page="/ContactUs/index"   is-active-user>@Localizer["contactus"].Value</a></li>
+              </ul>
+
+        </div>
+        <!-- ./ menus -->
+    </header>
+    <!-- ./header -->

@@ -1,0 +1,34 @@
+﻿@page
+@model Web.Pages.Departments.IndexModel
+@{
+    var title = "departments";
+}
+<partial name="_coverPage" model="@title" />
+
+<section class="departments organize-section section-settings">
+    <div class="container" id="update">
+        @foreach (var hospital in Model.departmets)
+        {
+            <div class="container-box animate" data-animate="zoomIn">
+                <h2><span>@Localizer["hospital"] @hospital.Key</span></h2>
+                <div class="content">
+                    @foreach (var dept in hospital)
+                    {
+                        <div class="box">
+                            <div class="icon"><i class="fas fa-stethoscope"></i></div>
+                            <div>
+                                <a asp-page="Details" asp-route-Id="@dept.Id">
+                                    <h3>@(Model.lang == "en" ? dept.Name : dept.NameAr)</h3>
+                                    <p>@(Model.lang == "en" ? dept.description.Substring(1,100)  : dept.descriptionAr.Substring(1, 100)   ) ...</p>
+                                </a>
+                            </div>
+                        </div> 
+                    }
+                </div>
+            </div>
+        }
+
+    </div>
+
+
+</section>

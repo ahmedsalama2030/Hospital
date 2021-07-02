@@ -1,0 +1,636 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aboutus" xml:space="preserve">
+    <value>من نحن</value>
+  </data>
+  <data name="aboutUsDescription" xml:space="preserve">
+    <value>وصف  عنا</value>
+  </data>
+  <data name="aboutUsshort" xml:space="preserve">
+    <value>وصف قصير</value>
+  </data>
+  <data name="add new" xml:space="preserve">
+    <value>إضافة جديد</value>
+  </data>
+  <data name="address" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="arabic" xml:space="preserve">
+    <value>الحقول باللغة العربية</value>
+  </data>
+  <data name="arabiclang" xml:space="preserve">
+    <value>اللغة العربية</value>
+  </data>
+  <data name="AssociatedDoctorsingalaa" xml:space="preserve">
+    <value>الأطباء العاملبن بالجلاء</value>
+  </data>
+  <data name="Associatedmessage" xml:space="preserve">
+    <value>يقدم لك أخصائيو الأطباء الخبراء والموظفون   رعاية استثنائية للمرضى هو ما يميز مركز الجلاء الطبي للرعاية الصحية  </value>
+  </data>
+  <data name="book" xml:space="preserve">
+    <value>حجز</value>
+  </data>
+  <data name="book an appointment" xml:space="preserve">
+    <value>أحجز موعدك</value>
+  </data>
+  <data name="book appointment" xml:space="preserve">
+    <value>حجز موعد</value>
+  </data>
+  <data name="book appointments" xml:space="preserve">
+    <value>حجز المواعيد</value>
+  </data>
+  <data name="choicecolor" xml:space="preserve">
+    <value>أختر لون</value>
+  </data>
+  <data name="choicelanguage" xml:space="preserve">
+    <value>أختر اللغة</value>
+  </data>
+  <data name="clinic name" xml:space="preserve">
+    <value>إسم العيادة</value>
+  </data>
+  <data name="Clinic-schedual" xml:space="preserve">
+    <value>جدول العيادات</value>
+  </data>
+  <data name="clinicreservation" xml:space="preserve">
+    <value>حجز العيادات</value>
+  </data>
+  <data name="clinicreservationinstructions" xml:space="preserve">
+    <value>تعليمات حجز العيادات</value>
+  </data>
+  <data name="clinics" xml:space="preserve">
+    <value>العيادات</value>
+  </data>
+  <data name="clinics schedul" xml:space="preserve">
+    <value>جدولة العيادات</value>
+  </data>
+  <data name="clinicsreservation" xml:space="preserve">
+    <value>حجز عيادات</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>الى</value>
+  </data>
+  <data name="common question" xml:space="preserve">
+    <value>الأسئلة الشائعة</value>
+  </data>
+  <data name="common questions" xml:space="preserve">
+    <value>الأسئلة الشائعة</value>
+  </data>
+  <data name="commonquestion" xml:space="preserve">
+    <value>الأسئلة الشائعة</value>
+  </data>
+  <data name="CommonQuestions" xml:space="preserve">
+    <value>الأسئلة الشائعة</value>
+  </data>
+  <data name="contact book your appointment" xml:space="preserve">
+    <value>أحجز موعدك</value>
+  </data>
+  <data name="contactdetails" xml:space="preserve">
+    <value>تفاصيل الأتصال</value>
+  </data>
+  <data name="contactus" xml:space="preserve">
+    <value>اتصل بنا</value>
+  </data>
+  <data name="create" xml:space="preserve">
+    <value>إنشاء</value>
+  </data>
+  <data name="degree" xml:space="preserve">
+    <value>الدرجات العلمية</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="delete msg" xml:space="preserve">
+    <value>هل أنت متأكد أنك تريد الحذف</value>
+  </data>
+  <data name="department" xml:space="preserve">
+    <value>القسم</value>
+  </data>
+  <data name="departments" xml:space="preserve">
+    <value>الأقسام</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="descripttion" xml:space="preserve">
+    <value>الوصف</value>
+  </data>
+  <data name="design" xml:space="preserve">
+    <value>صمم بواسطة المهندس أحمد سلامة</value>
+  </data>
+  <data name="doctor" xml:space="preserve">
+    <value>الطبيب</value>
+  </data>
+  <data name="doctorname" xml:space="preserve">
+    <value>أسم الدكتور</value>
+  </data>
+  <data name="doctors" xml:space="preserve">
+    <value>الأطباء</value>
+  </data>
+  <data name="Dr /" xml:space="preserve">
+    <value>د /</value>
+  </data>
+  <data name="DuplicateUserName" xml:space="preserve">
+    <value>هذأ المستخدم موجود</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>الإيميل</value>
+  </data>
+  <data name="email or username" xml:space="preserve">
+    <value>الأيميل او أسم المستخدم</value>
+  </data>
+  <data name="email or username	email or username" xml:space="preserve">
+    <value />
+  </data>
+  <data name="email-error" xml:space="preserve">
+    <value>هذأ الأيميل غير صحيح</value>
+  </data>
+  <data name="english" xml:space="preserve">
+    <value>الحقول باللغة الأنجليزية</value>
+  </data>
+  <data name="englishlang" xml:space="preserve">
+    <value>اللغة الأنجليزية</value>
+  </data>
+  <data name="error save" xml:space="preserve">
+    <value>فشل فى الحغظ</value>
+  </data>
+  <data name="facebook link" xml:space="preserve">
+    <value>رابط الفيس بوك</value>
+  </data>
+  <data name="fail password update" xml:space="preserve">
+    <value>فشل فى تحديث كلمة المرور</value>
+  </data>
+  <data name="fail role add" xml:space="preserve">
+    <value>فشل فى إضافة الصلاحية</value>
+  </data>
+  <data name="fail role update" xml:space="preserve">
+    <value>فشل فى تحديث الصلاحيات</value>
+  </data>
+  <data name="fail sent" xml:space="preserve">
+    <value>فشل الإرسال</value>
+  </data>
+  <data name="failure send" xml:space="preserve">
+    <value>فشل الأرسال</value>
+  </data>
+  <data name="field-required" xml:space="preserve">
+    <value>هذأ الحقل مطلوب</value>
+  </data>
+  <data name="filed-Error" xml:space="preserve">
+    <value>هذأ الحقل مطلوب</value>
+  </data>
+  <data name="findthedoctor" xml:space="preserve">
+    <value>بحث عن دكتور</value>
+  </data>
+  <data name="firstname" xml:space="preserve">
+    <value>الأسم الأول</value>
+  </data>
+  <data name="friday" xml:space="preserve">
+    <value>الجمعة</value>
+  </data>
+  <data name="full name" xml:space="preserve">
+    <value>الإسم كامل</value>
+  </data>
+  <data name="fullname" xml:space="preserve">
+    <value>الاسم بالكامل</value>
+  </data>
+  <data name="GeneralSettings" xml:space="preserve">
+    <value>إعدادات عامة</value>
+  </data>
+  <data name="haveanyquestion" xml:space="preserve">
+    <value>أى استفسار</value>
+  </data>
+  <data name="history" xml:space="preserve">
+    <value>التأريخ</value>
+  </data>
+  <data name="home" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="hospital" xml:space="preserve">
+    <value>مستشفى</value>
+  </data>
+  <data name="hospitals" xml:space="preserve">
+    <value>المستشفيات</value>
+  </data>
+  <data name="id not found" xml:space="preserve">
+    <value>هذأ المعرف غير موجود</value>
+  </data>
+  <data name="image required" xml:space="preserve">
+    <value>مطلوب أضافة صورة</value>
+  </data>
+  <data name="isConsultant" xml:space="preserve">
+    <value>أستشارى ؟</value>
+  </data>
+  <data name="job" xml:space="preserve">
+    <value>الوظيفة</value>
+  </data>
+  <data name="job Times" xml:space="preserve">
+    <value>أوقات العمل</value>
+  </data>
+  <data name="job Title" xml:space="preserve">
+    <value>المسمى الوظيفى</value>
+  </data>
+  <data name="last year" xml:space="preserve">
+    <value>العام الماضى</value>
+  </data>
+  <data name="lastest news" xml:space="preserve">
+    <value>أحدث الأخبار</value>
+  </data>
+  <data name="lastname" xml:space="preserve">
+    <value>أسم العائلة</value>
+  </data>
+  <data name="LinkedIn link" xml:space="preserve">
+    <value>رابط لينكدان</value>
+  </data>
+  <data name="log out" xml:space="preserve">
+    <value>تسجبل الخروج</value>
+  </data>
+  <data name="login sucessfully" xml:space="preserve">
+    <value>تم الدخول بنجاح</value>
+  </data>
+  <data name="logout" xml:space="preserve">
+    <value>تسجيل الخروج</value>
+  </data>
+  <data name="manager" xml:space="preserve">
+    <value>المدير</value>
+  </data>
+  <data name="manager photo" xml:space="preserve">
+    <value>صورة المدير</value>
+  </data>
+  <data name="manegerName" xml:space="preserve">
+    <value>أسم المدبر</value>
+  </data>
+  <data name="manegerTitle" xml:space="preserve">
+    <value>المسمى الوصيفى</value>
+  </data>
+  <data name="manegerWord" xml:space="preserve">
+    <value>كلمة المدير</value>
+  </data>
+  <data name="mapPath" xml:space="preserve">
+    <value>رأبط الخريطة</value>
+  </data>
+  <data name="max lenght 400 char" xml:space="preserve">
+    <value>max lenght 400 char</value>
+  </data>
+  <data name="mesg1" xml:space="preserve">
+    <value>لن يتم نشر عنوان بريدك الإلكتروني. الحقول المطلوبة محددة</value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>الرسالة</value>
+  </data>
+  <data name="messages" xml:space="preserve">
+    <value>الرسائل</value>
+  </data>
+  <data name="middelname" xml:space="preserve">
+    <value>الأسم الأوسط</value>
+  </data>
+  <data name="monday" xml:space="preserve">
+    <value>الأثنين</value>
+  </data>
+  <data name="more" xml:space="preserve">
+    <value>المزيد</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>الأسم</value>
+  </data>
+  <data name="nameAr" xml:space="preserve">
+    <value>الأسم بالعربى</value>
+  </data>
+  <data name="nameEn" xml:space="preserve">
+    <value>الأسم بالأنجليزى</value>
+  </data>
+  <data name="news" xml:space="preserve">
+    <value>الأخبار</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>لا</value>
+  </data>
+  <data name="no changes" xml:space="preserve">
+    <value>لا يوجد تغيرات</value>
+  </data>
+  <data name="no update found" xml:space="preserve">
+    <value>لا يوجد تحديثات</value>
+  </data>
+  <data name="note" xml:space="preserve">
+    <value>ملاحظة</value>
+  </data>
+  <data name="open" xml:space="preserve">
+    <value>مفتوح من</value>
+  </data>
+  <data name="Oppos" xml:space="preserve">
+    <value>خطأ</value>
+  </data>
+  <data name="our gallery" xml:space="preserve">
+    <value>صور</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="passwordNotCorrect" xml:space="preserve">
+    <value>كلمة المرور و تاكيد كلمة المرور غير متطابقتان</value>
+  </data>
+  <data name="phoensecond" xml:space="preserve">
+    <value>رقم التلبفون الثانى</value>
+  </data>
+  <data name="phoenthird" xml:space="preserve">
+    <value>رقم التلبفون الثالث</value>
+  </data>
+  <data name="phonemain" xml:space="preserve">
+    <value>رقم التلبفون الأساسى</value>
+  </data>
+  <data name="phonenumber" xml:space="preserve">
+    <value>رقم التليفون</value>
+  </data>
+  <data name="plase try again later or feel free to contact us if this problem persists" xml:space="preserve">
+    <value>يرجى المحاولة مرة أخرى لاحقًا أو لا تتردد في الاتصال بنا إذا استمرت هذه المشكلة</value>
+  </data>
+  <data name="Please enter this filed" xml:space="preserve">
+    <value>هذأ الحقل مطلوب</value>
+  </data>
+  <data name="questionmessage" xml:space="preserve">
+    <value>مديرو خدمة العملاء لدينا على اتصال 24/7 للإجابة على أسئلتك</value>
+  </data>
+  <data name="quickelinks" xml:space="preserve">
+    <value>روابط سريعة</value>
+  </data>
+  <data name="records" xml:space="preserve">
+    <value>السجلات</value>
+  </data>
+  <data name="repassword" xml:space="preserve">
+    <value>أعادة كلمة المرور</value>
+  </data>
+  <data name="reservationbefore48hours" xml:space="preserve">
+    <value>حجز العيادة قبل ٤٨ ساعة</value>
+  </data>
+  <data name="reserve the appointment" xml:space="preserve">
+    <value>أحجز موعدك</value>
+  </data>
+  <data name="rights" xml:space="preserve">
+    <value>جميع الحقوق محفوظة لمجمع الأمل©  ٢٠١٩ -٢٠٢٠</value>
+  </data>
+  <data name="roles" xml:space="preserve">
+    <value>الصلاحيات</value>
+  </data>
+  <data name="saturday" xml:space="preserve">
+    <value>السبت</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="security" xml:space="preserve">
+    <value>التحكم</value>
+  </data>
+  <data name="setting" xml:space="preserve">
+    <value>الأعدادات</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>الإعدادات</value>
+  </data>
+  <data name="show" xml:space="preserve">
+    <value>إظهار</value>
+  </data>
+  <data name="Sign in to start your session" xml:space="preserve">
+    <value>سجل الدخول و أستمتع بالجلسة</value>
+  </data>
+  <data name="site settings" xml:space="preserve">
+    <value>إعدادات الموقع</value>
+  </data>
+  <data name="siteLogo" xml:space="preserve">
+    <value>لوجو الموقع</value>
+  </data>
+  <data name="siteName" xml:space="preserve">
+    <value>أسم الموقع</value>
+  </data>
+  <data name="SiteNameadmin" xml:space="preserve">
+    <value>أسم الموقع للوحه التحكم</value>
+  </data>
+  <data name="skills" xml:space="preserve">
+    <value>المهارات</value>
+  </data>
+  <data name="some field error" xml:space="preserve">
+    <value>يوجد خطأ فى إدخال بعض الحقول</value>
+  </data>
+  <data name="special" xml:space="preserve">
+    <value>التخصص</value>
+  </data>
+  <data name="stopbackground" xml:space="preserve">
+    <value>أيقاف الحركة </value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>إرسال</value>
+  </data>
+  <data name="succss save" xml:space="preserve">
+    <value>تم الحفظ بنجاح</value>
+  </data>
+  <data name="succss update" xml:space="preserve">
+    <value>تم  التعديل بنجاح</value>
+  </data>
+  <data name="sucess send" xml:space="preserve">
+    <value>تم بنجاح</value>
+  </data>
+  <data name="sunday" xml:space="preserve">
+    <value>الأحد</value>
+  </data>
+  <data name="the services" xml:space="preserve">
+    <value>الخدمات</value>
+  </data>
+  <data name="this email incorrect" xml:space="preserve">
+    <value>هذأ الإيميل غير صحيح</value>
+  </data>
+  <data name="this year" xml:space="preserve">
+    <value>العام الحالى</value>
+  </data>
+  <data name="thursday" xml:space="preserve">
+    <value>الخميس</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>الوقت</value>
+  </data>
+  <data name="timefrom" xml:space="preserve">
+    <value>الوقت من </value>
+  </data>
+  <data name="timeto" xml:space="preserve">
+    <value>الوقت الى</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="tuesday" xml:space="preserve">
+    <value>الثلاثاء</value>
+  </data>
+  <data name="university" xml:space="preserve">
+    <value>الجامعة</value>
+  </data>
+  <data name="upload images" xml:space="preserve">
+    <value>رفع الصور</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>أسم المستخدم</value>
+  </data>
+  <data name="users" xml:space="preserve">
+    <value>المستخدمين</value>
+  </data>
+  <data name="value" xml:space="preserve">
+    <value>القيمة</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>إصدار 1</value>
+  </data>
+  <data name="videoaboutus" xml:space="preserve">
+    <value>فيديو من نحن</value>
+  </data>
+  <data name="Videolink" xml:space="preserve">
+    <value>رأبط الفيديو</value>
+  </data>
+  <data name="viewdetails" xml:space="preserve">
+    <value>التفاصيل</value>
+  </data>
+  <data name="vision" xml:space="preserve">
+    <value>الرؤية</value>
+  </data>
+  <data name="warning" xml:space="preserve">
+    <value>تحذير</value>
+  </data>
+  <data name="wednesday" xml:space="preserve">
+    <value>الأربعاء</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>مرحبا</value>
+  </data>
+  <data name="weLovetohearfromyou" xml:space="preserve">
+    <value>نحن نحب أن نسمع منك</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>نعم</value>
+  </data>
+  <data name="You do not have permission" xml:space="preserve">
+    <value>أنت ليست لديك صلاحية</value>
+  </data>
+  <data name="youremail" xml:space="preserve">
+    <value>الإيميل</value>
+  </data>
+  <data name="yourphone" xml:space="preserve">
+    <value>التليفون</value>
+  </data>
+  <data name="Youtube link" xml:space="preserve">
+    <value>رابط اليوتيوب</value>
+  </data>
+</root>

@@ -1,0 +1,232 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>c5ec3bdc-df0e-4ce5-b88b-f2829bf7c7b0</UserSecretsId>
+	  <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\.sass-cache\**" />
+    <Compile Remove="wwwroot\css\.sass-cache\**" />
+    <Compile Remove="wwwroot\.sass-cache\**" />
+    <Compile Remove="wwwroot\css\.sass-cache\**" />
+    <Compile Remove="wwwroot\sssss\**" />
+    <Content Remove="wwwroot\.sass-cache\**" />
+    <Content Remove="wwwroot\css\.sass-cache\**" />
+    <Content Remove="wwwroot\.sass-cache\**" />
+    <Content Remove="wwwroot\css\.sass-cache\**" />
+    <Content Remove="wwwroot\sssss\**" />
+    <EmbeddedResource Remove="wwwroot\.sass-cache\**" />
+    <EmbeddedResource Remove="wwwroot\css\.sass-cache\**" />
+    <EmbeddedResource Remove="wwwroot\.sass-cache\**" />
+    <EmbeddedResource Remove="wwwroot\css\.sass-cache\**" />
+    <EmbeddedResource Remove="wwwroot\sssss\**" />
+    <None Remove="wwwroot\.sass-cache\**" />
+    <None Remove="wwwroot\css\.sass-cache\**" />
+    <None Remove="wwwroot\.sass-cache\**" />
+    <None Remove="wwwroot\css\.sass-cache\**" />
+    <None Remove="wwwroot\sssss\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.14" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.13">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\Admin\Pages\Departments\Index.cshtml" />
+    <None Include="obj\Debug\netcoreapp3.1\apphost.exe" />
+    <None Include="obj\Debug\netcoreapp3.1\ar\Web.resources.dll" />
+    <None Include="obj\Debug\netcoreapp3.1\en\Web.resources.dll" />
+    <None Include="obj\Debug\netcoreapp3.1\staticwebassets\Web.StaticWebAssets.Manifest.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.assets.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.csproj.CopyComplete" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.csprojAssemblyReference.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.dll" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.genruntimeconfig.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.MvcApplicationPartsAssemblyInfo.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.pdb" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.RazorAssemblyInfo.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.RazorCoreGenerate.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.RazorTargetAssemblyInfo.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.Resources.Resource.ar.resources" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.Resources.Resource.en.resources" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.TagHelpers.input.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.TagHelpers.output.cache" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.Views.dll" />
+    <None Include="obj\Debug\netcoreapp3.1\Web.Views.pdb" />
+    <None Include="obj\project.nuget.cache" />
+    <None Include="obj\Release\netcoreapp3.1\Web.AssemblyInfoInputs.cache" />
+    <None Include="obj\Release\netcoreapp3.1\Web.assets.cache" />
+    <None Include="obj\Release\netcoreapp3.1\Web.csprojAssemblyReference.cache" />
+    <None Include="obj\Release\netcoreapp3.1\Web.RazorAssemblyInfo.cache" />
+    <None Include="obj\Web.csproj.EntityFrameworkCore.targets" />
+    <None Include="obj\Web.csproj.nuget.g.props" />
+    <None Include="obj\Web.csproj.nuget.g.targets" />
+    <None Include="wwwroot\css\all.min.css" />
+    <None Include="wwwroot\css\sass\components\_buttons.scss" />
+    <None Include="wwwroot\css\sass\components\_coverPage.scss" />
+    <None Include="wwwroot\css\sass\components\_inputs.scss" />
+    <None Include="wwwroot\css\sass\components\_pagination.scss" />
+    <None Include="wwwroot\css\sass\heplers\_functions.scss" />
+    <None Include="wwwroot\css\sass\heplers\_mixins.scss" />
+    <None Include="wwwroot\css\sass\heplers\_variable.scss" />
+    <None Include="wwwroot\css\sass\layout\_footer.scss" />
+    <None Include="wwwroot\css\sass\layout\_grid.scss" />
+    <None Include="wwwroot\css\sass\layout\_header.scss" />
+    <None Include="wwwroot\css\sass\layout\_settingBox.scss" />
+    <None Include="wwwroot\css\sass\pages\_aboutus.scss" />
+    <None Include="wwwroot\css\sass\pages\_clinics.scss" />
+    <None Include="wwwroot\css\sass\pages\_contactus.scss" />
+    <None Include="wwwroot\css\sass\pages\_department.scss" />
+    <None Include="wwwroot\css\sass\pages\_doctor.scss" />
+    <None Include="wwwroot\css\sass\pages\_doctors.scss" />
+    <None Include="wwwroot\css\sass\pages\_home.scss" />
+    <None Include="wwwroot\css\sass\pages\_layoutPage.scss" />
+    <None Include="wwwroot\css\site.css" />
+    <None Include="wwwroot\css\site.css.map" />
+    <None Include="wwwroot\css\site.scss" />
+    <None Include="wwwroot\js\favicon.ico" />
+    <None Include="wwwroot\fonts\Poppins-Black.ttf" />
+    <None Include="wwwroot\fonts\Poppins-BlackItalic.ttf" />
+    <None Include="wwwroot\fonts\Poppins-Bold.ttf" />
+    <None Include="wwwroot\fonts\Poppins-BoldItalic.ttf" />
+    <None Include="wwwroot\fonts\Poppins-ExtraBold.ttf" />
+    <None Include="wwwroot\fonts\Poppins-ExtraBoldItalic.ttf" />
+    <None Include="wwwroot\fonts\Poppins-ExtraLight.ttf" />
+    <None Include="wwwroot\fonts\Poppins-ExtraLightItalic.ttf" />
+    <None Include="wwwroot\fonts\Poppins-Italic.ttf" />
+    <None Include="wwwroot\fonts\Poppins-Light.ttf" />
+    <None Include="wwwroot\fonts\Poppins-LightItalic.ttf" />
+    <None Include="wwwroot\fonts\Poppins-Medium.ttf" />
+    <None Include="wwwroot\fonts\Poppins-MediumItalic.ttf" />
+    <None Include="wwwroot\fonts\Poppins-Regular.ttf" />
+    <None Include="wwwroot\fonts\Poppins-SemiBold.ttf" />
+    <None Include="wwwroot\fonts\Poppins-SemiBoldItalic.ttf" />
+    <None Include="wwwroot\fonts\Poppins-Thin.ttf" />
+    <None Include="wwwroot\fonts\Poppins-ThinItalic.ttf" />
+    <None Include="wwwroot\img\about.jpg" />
+    <None Include="wwwroot\img\avatar.png" />
+    <None Include="wwwroot\img\avatar2.png" />
+    <None Include="wwwroot\img\avatar3.png" />
+    <None Include="wwwroot\img\avatar4.png" />
+    <None Include="wwwroot\img\avatar5.png" />
+    <None Include="wwwroot\img\Barbara-Nieves-240x250.jpg" />
+    <None Include="wwwroot\img\boxed-bg.jpg" />
+    <None Include="wwwroot\img\boxed-bg.png" />
+    <None Include="wwwroot\img\contact-us-cover.jpg" />
+    <None Include="wwwroot\img\credit\american-express.png" />
+    <None Include="wwwroot\img\credit\cirrus.png" />
+    <None Include="wwwroot\img\credit\mastercard.png" />
+    <None Include="wwwroot\img\credit\paypal.png" />
+    <None Include="wwwroot\img\credit\paypal2.png" />
+    <None Include="wwwroot\img\credit\visa.png" />
+    <None Include="wwwroot\img\default-150x150.png" />
+    <None Include="wwwroot\img\doctor.jpg" />
+    <None Include="wwwroot\img\doctorCover.jpg" />
+    <None Include="wwwroot\img\end.png" />
+    <None Include="wwwroot\img\icons.png" />
+    <None Include="wwwroot\img\logo.png" />
+    <None Include="wwwroot\img\main-home-video.jpg" />
+    <None Include="wwwroot\img\manager.jpg" />
+    <None Include="wwwroot\img\photo1.png" />
+    <None Include="wwwroot\img\photo2.png" />
+    <None Include="wwwroot\img\photo3.jpg" />
+    <None Include="wwwroot\img\photo4.jpg" />
+    <None Include="wwwroot\img\prod-1.jpg" />
+    <None Include="wwwroot\img\prod-2.jpg" />
+    <None Include="wwwroot\img\prod-3.jpg" />
+    <None Include="wwwroot\img\prod-4.jpg" />
+    <None Include="wwwroot\img\prod-5.jpg" />
+    <None Include="wwwroot\img\slider1.jpg" />
+    <None Include="wwwroot\img\slider2.jpg" />
+    <None Include="wwwroot\img\status.png" />
+    <None Include="wwwroot\img\user1-128x128.jpg" />
+    <None Include="wwwroot\img\user2-160x160.jpg" />
+    <None Include="wwwroot\img\user3-128x128.jpg" />
+    <None Include="wwwroot\img\user4-128x128.jpg" />
+    <None Include="wwwroot\img\user5-128x128.jpg" />
+    <None Include="wwwroot\img\user6-128x128.jpg" />
+    <None Include="wwwroot\img\user7-128x128.jpg" />
+    <None Include="wwwroot\img\user8-128x128.jpg" />
+    <None Include="wwwroot\js\custom.js" />
+    <None Include="wwwroot\js\doctor.js" />
+    <None Include="wwwroot\js\general.js" />
+    <None Include="wwwroot\js\index copy.js" />
+    <None Include="wwwroot\js\index.js" />
+    <None Include="wwwroot\js\lib\jquery\jquery.min.js" />
+    <None Include="wwwroot\webfonts\fa-brands-400.eot" />
+    <None Include="wwwroot\webfonts\fa-brands-400.svg" />
+    <None Include="wwwroot\webfonts\fa-brands-400.ttf" />
+    <None Include="wwwroot\webfonts\fa-brands-400.woff" />
+    <None Include="wwwroot\webfonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\webfonts\fa-regular-400.eot" />
+    <None Include="wwwroot\webfonts\fa-regular-400.svg" />
+    <None Include="wwwroot\webfonts\fa-regular-400.ttf" />
+    <None Include="wwwroot\webfonts\fa-regular-400.woff" />
+    <None Include="wwwroot\webfonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\webfonts\fa-solid-900.eot" />
+    <None Include="wwwroot\webfonts\fa-solid-900.svg" />
+    <None Include="wwwroot\webfonts\fa-solid-900.ttf" />
+    <None Include="wwwroot\webfonts\fa-solid-900.woff" />
+    <None Include="wwwroot\webfonts\fa-solid-900.woff2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Resource.ar.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Resource.en.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="obj\Debug\netcoreapp3.1\ar-Eg\" />
+    <Folder Include="wwwroot\imageUpload\" />
+    <Folder Include="wwwroot\plugins\JQueryCookies\" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
+ 
+  <ItemGroup>
+    <Content Include="obj\Debug\netcoreapp3.1\staticwebassets\Web.StaticWebAssets.xml" />
+    <Content Include="obj\Debug\netcoreapp3.1\Web.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\project.assets.json" />
+    <Content Include="obj\Web.csproj.nuget.dgspec.json" />
+  </ItemGroup>
+
+</Project>

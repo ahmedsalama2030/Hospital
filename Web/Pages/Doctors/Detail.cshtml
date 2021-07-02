@@ -1,0 +1,57 @@
+﻿@page
+@model Web.Pages.Doctors.DetailModel
+@{
+}
+<section class="doctor-details section-settings">
+    <div class="container">
+        <div class="content">
+            <div class="info">
+                <div    class=" box container-box animate" data-animate="zoomIn">
+                    <img onerror="this.onerror=null;this.src='/img/doctor.jpg'" src="@Url.Content("~/"+Model.Doctor.PhotoPath)" alt="Dr Photo">
+                    <h2> @Localizer["Dr /"] @(Model.lang == "en"? Model.Doctor.Name: Model.Doctor.NameAr)</h2>
+                </div>
+                <div  class=" box container-box animate" data-animate="zoomIn">
+                    <h3>
+                        <i class="fas fa-first-aid"></i>
+                        <span>@Localizer["degree"].Value</span>
+                    </h3>
+                    <p>@(Model.lang == "en"? Model.Doctor.Special: Model.Doctor.SpecialAr)</p>
+                </div>
+                <div  class=" box container-box animate" data-animate="zoomIn">
+                    <h3>
+                        <i class="fas fa-notes-medical"></i>
+                        <span>@Localizer["university"].Value</span>
+                    </h3>
+                    <p>@(Model.lang == "en"? Model.Doctor.University: Model.Doctor.UniversityAr) </p>
+                </div>
+
+
+            </div>
+            <div class="more" >
+                <div   class=" content-more container-box animate" data-animate="zoomIn">
+                    <h2>@Localizer["skills"].Value </h2>
+                    <div>
+                        
+                        <p><i class="fas fa-check"></i> @(Model.lang == "en"? Model.Doctor.Skills: Model.Doctor.SkillsAr)</p>
+                    </div>
+                </div>
+                <div class=" content-more container-box animate" data-animate="zoomIn">
+                    <h2>@Localizer["job"].Value </h2>
+                    <div>
+                        <p>@(Model.lang == "en"? Model.Doctor.Job: Model.Doctor.JobAr)</p>
+                    </div>
+                </div>
+                <div class=" content-more container-box animate" data-animate="zoomIn">
+                    <h2>@Localizer["department"].Value    </h2>
+                    <div>
+                        <p> @(Model.lang == "en"? Model.Doctor.DepartmentName: Model.Doctor.DepartmentNameAr)</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</section>

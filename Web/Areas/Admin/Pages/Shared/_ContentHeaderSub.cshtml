@@ -1,0 +1,20 @@
+﻿
+@model ContentHeaderLevels 
+<!-- Content Header (Page header) -->
+<div class="content-header text-capitalize">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6 name">
+                <h1 class="m-0">@Localizer[Model.level2].Value </h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6 link">
+                <ol class="breadcrumb  ">
+                    <li class="breadcrumb-item"><a href="/Admin/Home/">@Localizer["home"].Value</a></li>
+                    <li class="breadcrumb-item"><a href="/Admin/@Model.level1">@Localizer[Model.level1].Value</a></li>
+                    <li class="breadcrumb-item active">@Localizer[Model.level2].Value </li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->

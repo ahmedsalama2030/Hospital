@@ -1,0 +1,44 @@
+﻿@page "{id:Guid?}"
+@model Web.Pages.Hospitals.DetailsModel
+@{
+    var hospitals = Model.hospitals;
+    var title = (Model.lang == "en") ? hospitals.Name : hospitals.NameAr;
+
+}
+<partial name="_coverPage" model="@title" />
+
+<section class="hospital section-settings">
+    <div class="description">
+        <div class="container">
+            <h2><span>@Localizer["aboutus"].Value</span></h2>
+            <p>@(Model.lang == "en" ? hospitals.description : hospitals.descriptionAr)</p>
+        </div>
+    </div>
+    <div class="departments organize-section">
+        <div class="container">
+            <h2>
+                <span>@Localizer["departments"].Value</span>
+            </h2>
+            <div class="content">
+                @foreach (var dept in hospitals.Departments)
+                {
+                    <div class="box">
+                        <div class="icon"><i class="fas fa-stethoscope"></i></div>
+                        <div>
+                            <a asp-page="/Departments/Details" asp-route-Id="@dept.Id"  >
+                                <h3>@(Model.lang == "en" ? dept.Name : dept.NameAr)</h3>
+                                <p>@(Model.lang == "en" ? dept.description  : dept.descriptionAr )</p>
+                            </a>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+
+            <div class="view">
+                <a href="view all"> </a>
+            </div>
+        </div>
+    </div>
+</section>

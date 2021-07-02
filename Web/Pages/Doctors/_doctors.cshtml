@@ -1,0 +1,16 @@
+﻿@model IEnumerable<DoctorDtoListGet>;
+
+@foreach (var doctor in Model)
+{
+    <div class="box">
+        <img onerror="this.onerror=null;this.src='/img/doctor.jpg'" src="@Url.Content("~/"+doctor.PhotoPath)" alt="">
+        <div class="info">
+            <h3>dr / @(CulutureServices.GetCulture() == "en" ? doctor.Name : doctor.NameAr)</h3>
+            <p>
+                @(CulutureServices.GetCulture() == "en" ? doctor.Special : doctor.SpecialAr)
+            </p>
+
+            <a asp-page="/Doctors/Details"   asp-route-Id="@doctor.Id"> @Localizer["more"].Value</a>
+        </div>
+    </div>
+}

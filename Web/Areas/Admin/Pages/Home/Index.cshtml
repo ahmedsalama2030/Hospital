@@ -1,0 +1,136 @@
+﻿@page
+@model Web.Areas.Admin.Pages.Home.IndexModel
+ 
+
+<div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" onerror="this.onerror=null;this.src='img/logo.png'" src="@Url.Content("~/"+Model.logoPath)" alt="admin logo" height="60" width="60">
+</div>
+ <div class="content-header text-capitalize">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6 name">
+                <h1 class="m-0">@Localizer["home"].Value </h1>
+            </div><!-- /.col -->
+            
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- Main content -->
+<section class="content  ">
+    <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                    <div class="inner">
+                        <h3>@Model.Users</h3>
+                         <p>@Localizer["users"].Value</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-bag"></i>
+                    </div>
+                    <a asp-page="/Admin/Users/Index" class="small-box-footer">@Localizer["more"].Value  <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                    <div class="inner">
+                        <h3><span id="Book-Appountment">@Model.Appointment</span></h3>
+
+                        <p>@Localizer["book appointments"].Value</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <a asp-page="/Admin/Appointments/Index" class="small-box-footer">@Localizer["more"].Value  <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                    <div class="inner">
+                        <h3>@Model.News</h3>
+
+                        <p>@Localizer["news"].Value</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                    </div>
+                    <a asp-page="/Admin/News/Index"  class="small-box-footer">@Localizer["more"].Value  <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h3>@Model.Contact</h3>
+
+                        <p>@Localizer["messages"].Value</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-pie-graph"></i>
+                    </div>
+                    <a asp-page="/Admin/messages/Index" class="small-box-footer">@Localizer["more"].Value  <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+        </div>
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row">
+
+            <!-- /.col-md-6 -->
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header border-0">
+                        <div class="d-flex justify-content-between">
+                            <h3 class="card-title">@Localizer["book appointments"].Value</h3>
+                         </div>
+                    </div>
+                    <div class="card-body">
+                         
+                        <!-- /.d-flex -->
+
+                        <div class="position-relative mb-4">
+                            <div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                            <canvas id="sales-chart" height="400" style="display: block; height: 200px; width: 667px;" width="1334" class="chartjs-render-monitor"></canvas>
+                        </div>
+
+                        <div class="d-flex flex-row justify-content-end">
+                            <span class="mr-2">
+                                <i class="fas fa-square text-primary"></i> @Localizer["this year"].Value                            </span>
+
+                            <span>
+                                <i class="fas fa-square text-gray"></i>  @Localizer["last year"].Value
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card -->
+
+            </div>
+            <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+<!-- /.content-wrapper -->
+@section Scripts{
+    <script src="~/js/lib/microsoft-signalr/signalr.min.js"></script>
+
+    <script>
+        let connection = new signalR.HubConnectionBuilder().withUrl("/appointmentHub").build();
+        connection.start() .catch(function (err) {  return console.error(err.toString()); });
+        connection.on("receiveAppointment", function (count) {
+            document.getElementById("Book-Appountment").innerText = count;
+
+        });
+    </script>
+
+}

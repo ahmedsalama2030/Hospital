@@ -1,0 +1,22 @@
+﻿@model IEnumerable<SliderDto>
+@{
+    var slideCount = 1;
+    var culture = CulutureServices.GetCulture();   //  get culture name from  services
+ }
+<section class="slides">
+    @foreach (var slider in Model)
+    {
+        <div class="slide @(slideCount++ == 1 ? "active" : "") " data-url="@Url.Content("~/" + slider.Path)">
+            <div></div>
+            <div  class="  animate introduction" data-animate="zoomIn"  >
+                <h3> @(culture == "en" ? slider.Title : slider.TitleAr)  </h3>
+                <p>
+                    @(culture == "en" ? slider.Text : slider.TextAr)
+                </p>
+            </div>
+        </div>
+        
+    }
+
+    
+    </section>

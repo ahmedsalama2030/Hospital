@@ -1,0 +1,107 @@
+﻿@page
+@model Web.Pages.ContactUs.IndexModel
+
+ @{
+     var title = "contactus";
+ }
+
+<partial name="_coverPage" model="@title" />
+
+<section class="contact-us section-settings">
+    <div class="container">
+        <h2>@Localizer["weLovetohearfromyou"].Value </h2>
+        <p>@Localizer["mesg1"].Value  *</p>
+        <form id="contactForm"
+              asp-action="Index"
+              data-ajax="true"
+              data-ajax-method="POST"
+              data-ajax-mode="replace"
+              data-ajax-loading="#loader"
+              data-ajax-begin="begin"
+              data-ajax-success="success"
+              data-ajax-failure="failure">
+            <div class="contact-container">
+                <div class="form animate" data-animate="zoomIn">
+                    <div >
+                        <label for="Name">@Localizer["fullname"].Value *</label>
+                        <input class="form-control" asp-for="@Model.ContactUs.Name" data-val="true">
+                        <span asp-validation-for="@Model.ContactUs.Name" class="text-danger"></span>
+
+                    </div>
+                    <div>
+                        <label for="">@Localizer["youremail"].Value *</label>
+                        <input class="form-control" asp-for="@Model.ContactUs.Email">
+                        <span asp-validation-for="@Model.ContactUs.Email" class="text-danger"></span>
+
+                    </div>
+                    <div>
+                        <label for="">@Localizer["yourphone"].Value *</label>
+                        <input class="form-control" asp-for="@Model.ContactUs.Phone" type="number">
+                        <span asp-validation-for="@Model.ContactUs.Phone" class="text-danger"></span>
+
+                    </div>
+                    <div>
+                        <label for="">@Localizer["message"].Value *</label>
+                        <textarea class="form-control" asp-for="@Model.ContactUs.Message" rows="6"></textarea>
+                        <span asp-validation-for="@Model.ContactUs.Message" class="text-danger"></span>
+
+
+                    </div>
+                    <div>  
+                        <button id="btn-submit" type="submit" class="btn"> @Localizer["submit"].Value    </button>
+                        <span data-sucess="@Localizer["sucess send"]" data-failure="@Localizer["failure send"]" id="massage"></span>
+                        <span id="loader" style="display:none" class="fa  fa-spin fa-spinner"></span>
+
+                    </div>
+
+                </div>
+                <div class="detail animate" data-animate="zoomIn">
+                    <h2>@Localizer["contactdetails"].Value</h2>
+                    <p>  @(Model.lang == "en"?  Model.Details.AboutUs : Model.Details.AboutUsAr)  </p>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>@(Model.lang == "en"? Model.Details.Address : Model.Details.AddressAr)</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt "></i>
+                            <span>@Model.Details.PhoneNumbermain</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>@Model.Details.Email</span>
+                        </li>
+                    </ul>
+
+                    <iframe src="@Url.Content(Model.Details.MapPath)" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+@section Scripts{
+
+    @await Html.PartialAsync("_ValidationScriptsPartial.cshtml")
+    <script>
+        begin = function () {
+            $("#massage").html("");
+            $("#btn-submit").toggleClass("send-btn");
+
+        }
+        success = function (data) {
+            $("#massage").html(data);
+            $("#contactForm").get(0).reset();
+            $("#btn-submit").toggleClass("send-btn");
+        }
+        failure = function (data) {
+            var data = $("#massage").data("failure");
+            $("#massage").html("<span  class='message-error'>" + data + "</span>");
+            $("#btn-submit").toggleClass("send-btn");
+        }
+
+
+    </script>
+
+
+}

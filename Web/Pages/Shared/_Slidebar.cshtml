@@ -1,0 +1,53 @@
+﻿@{
+    var returnUrl = string.IsNullOrEmpty(Context.Request.Path) ? "~/" : $"~{Context.Request.Path + Context.Request.QueryString.Value}";
+    var culture = CulutureServices.GetCulture();
+
+}
+@* change setting-box *@
+<input id="setting-nav" type="checkbox" />
+<section class="setting-box">
+    <h2 class="head"> @Localizer["setting"].Value</h2>
+    <label for="setting-nav">
+        <i class="fa fa-cog  icon " aria-hidden="true"></i>
+    </label>
+    <div class="box-container">
+        <div class="color setting">
+            <h3>@Localizer["choicecolor"].Value</h3>
+            <div>
+                <span class="active" data-color="#007df2"></span>
+                <span data-color="#2dc296"></span>
+                <span data-color="#f36c04"></span>
+                <span data-color="#f60b39"></span>
+                <span data-color="#df4e8e"></span>
+            </div>
+
+        </div>
+
+        <div class="lang setting">
+            <h3>@Localizer["choicelanguage"].Value </h3>
+            <div>
+                <a asp-page="/Home/Index" asp-route-culture="ar" asp-route-returnUrl="@returnUrl" asp-page-handler="ChangeLanguage" class="btn   @(culture=="ar"?"active":"")" style="margin:0 .2rem">
+                    <span>@Localizer["arabic"].Value</span>
+
+                </a>
+                <a asp-page="/Home/Index" asp-route-culture="en" asp-route-returnUrl="@returnUrl" asp-page-handler="ChangeLanguage" class="btn @(culture=="en"?"active":"")">
+                    <span>@Localizer["english"].Value</span>
+                </a>
+
+
+            </div>
+
+        </div>
+
+        <div class="background setting">
+            <h3>@Localizer["stopbackground"].Value</h3>
+            <div>
+                <span data-type="yes" class="btn active">@Localizer["yes"].Value</span>
+                <span data-type="no" class="btn">@Localizer["no"].Value</span>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,155 @@
+﻿@page "{id:Guid?}"
+@model Web.Areas.Admin.Pages.News.EditModel
+@{
+    var headerInfo = new ContentHeaderLevels() { level1 = "news", level2 = "edit" };
+}
+@section Styles{
+    <link rel="stylesheet" href="~/plugins/dropzone/dropzone.css">
+    <link rel="stylesheet" href="~/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+}
+<partial name="_ContentHeaderSub" model="headerInfo " />
+<section class="content">
+    <div class="container-fluid">
+        <div class="row text-capitalize">
+            <div class="col-12 col-sm-8 mx-auto">
+                <div class="card card-primary card-outline card-outline-tabs">
+                    <div class="card-header p-0 border-bottom-0">
+                        <ul class="nav nav-tabs   text-center font-weight-bold" id="custom-tabs-four-tab " role="tablist">
+                            <li class="nav-item flex-grow-1 flex-shrink-1">
+                                <a class="nav-link active " id="custom-tabs-four-home-tab" data-toggle="pill" href="#custom-tabs-four-home" role="tab" aria-controls="custom-tabs-four-home" aria-selected="false">@Localizer["english"].Value </a>
+                            </li>
+                            <li class="nav-item flex-grow-1 flex-shrink-1">
+                                <a class="nav-link " id="custom-tabs-four-profile-tab" data-toggle="pill" href="#custom-tabs-four-profile" role="tab" aria-controls="custom-tabs-four-profile" aria-selected="true">@Localizer["arabic"].Value  </a>
+                            </li>
+
+                            <li class="nav-item flex-grow-1 flex-shrink-1">
+                                <a class="nav-link" id="custom-tabs-four-settings-tab" data-toggle="pill" href="#custom-tabs-four-settings" role="tab" aria-controls="custom-tabs-four-settings" aria-selected="false">@Localizer["upload images"].Value </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <form enctype="multipart/form-data"
+                      method="post"
+                      id="create"
+                      data-ajax="true"
+                      data-ajax-method="POST"
+                      data-ajax-begin="begin"
+                      data-ajax-success="successEdit"
+                      data-ajax-failure="failure"
+                      data-ajax-complete="complete"
+                      name="create"
+                          >
+                        <div class="card-body">
+                            <div id="overlay" class="overlay-wrapper  d-none ">
+                                <div class="overlay">
+                                    <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+                                </div>
+                            </div>
+                            <input type="hidden" asp-for="@Model.news.Id" />
+                            <div class="tab-content" id="custom-tabs-four-tabContent">
+                                <div class="tab-pane fade show active" id="custom-tabs-four-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
+                                     
+                                        <div class="form-group">
+                                            <label>@Localizer["title"]</label>
+                                            <textarea asp-for="@Model.news.Title" class="form-control" rows="3"></textarea>
+                                            <span asp-validation-for="@Model.news.Title" class="text-danger"></span>
+
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label>@Localizer["description"]</label>
+                                            <textarea asp-for="@Model.news.description" class="form-control" rows="3"></textarea>
+                                            <span asp-validation-for="@Model.news.description" class="text-danger"></span>
+
+                                        </div>
+                                    
+
+                                </div>
+                                <div class="tab-pane fade   show" id="custom-tabs-four-profile" role="tabpanel" aria-labelledby="custom-tabs-four-profile-tab">
+                                  
+
+                                        <div class="form-group">
+                                            <label class="d-block">@Localizer["title"]</label>
+                                            <textarea asp-for="@Model.news.TitleAr" class="form-control" rows="3"></textarea>
+                                            <span asp-validation-for="@Model.news.TitleAr" class="text-danger"></span>
+
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="d-block">@Localizer["description"]</label>
+                                            <textarea asp-for="@Model.news.descriptionAr" class="form-control" rows="3"></textarea>
+                                            <span asp-validation-for="@Model.news.descriptionAr" class="text-danger"></span>
+
+                                        </div>
+                                     
+                                </div>
+                                <div class="tab-pane fade  show" id="custom-tabs-four-settings" role="tabpanel" aria-labelledby="custom-tabs-four-settings-tab">
+                                    <div class="tab-pane fade  show" id="custom-tabs-four-settings" role="tabpanel" aria-labelledby="custom-tabs-four-settings-tab">
+                                        <div class="d-flex justify-content-center align-items-center mt-1 border text-info">
+                                            <input type="file" multiple asp-for="@Model.photosUpload" class="d-none" value="" />
+                                            <label for="photosUpload">
+                                                <i class="fa fa-cloud-upload-alt"> </i>
+                                            </label>
+                                        </div>
+                                        <div id="galleryUpload" class="d-flex flex-wrap justify-content-center">
+                                            @foreach (var image in Model.news.NewsImages)
+                                            {
+                                                <div id="@image.Id" class="d-flex flex-column justify-content-center  align-items-center">
+                                                    <img height="100" width="100" src="@Url.Content("~/"+image.Path)" alt="image-Depatemnet" />
+                                                    <div>
+
+                                                        <p>is main</p>
+                                                        <div><input name="NewsImageId" value="@image.Id" checked="@image.isMain"   type="radio"></div> 
+                                                    </div>
+                                                    <a method="post"
+                                                       id="deleteForm"
+                                                       data-ajax="true"
+                                                       data-ajax-method="Get"
+                                                       data-ajax-mode="replace"
+                                                       data-ajax-update="@image.Id" data-ajax-begin="begin"
+                                                       data-ajax-success="successDeleteImage"
+                                                       data-ajax-failure="failure"
+                                                       data-ajax-complete="complete"
+                                                       class="text-decoration-none      btn-link "
+                                                       asp-page="Edit" asp-route-photoId="@image.Id" asp-area="Admin" asp-page-handler="DeleteImage">@Localizer["delete"]</a>
+                                                </div>
+                                            }
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <!-- /.card -->
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="card-footer text-center  ">
+
+                            <div>
+                                <button type="submit" class="btn btn-primary  ">@Localizer["submit"]</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+</section>
+@section Scripts{
+
+    @await Html.PartialAsync("_ValidationScriptsPartial.cshtml")
+    <script src="~/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <script src="~/js/admin/form-ajax-methods.js"></script>
+
+    <script>
+    $(function () {
+        // parameters [ languagePage, continer-Images,Size-Files,Count-Files ]
+        $("#photosUpload").UploadImage("@Model.lang", $("#galleryUpload"), 2, 8, ['jpg', 'png','jpeg']);
+    });
+    </script>
+}

@@ -1,0 +1,71 @@
+﻿@page
+@model Web.Areas.Auth.Pages.Login.IndexModel
+@{
+    Layout = "_LayoutLogin";
+
+}
+@section Styles{
+    <link rel="stylesheet" href="~/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+}
+<div class="login-box">
+    <!-- /.login-logo -->
+    <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+            <a href="#" class="h1 text-decoration-none"><b>@Model.sitename</b> </a>
+        </div>
+        <div class="card-body">
+            <p class="login-box-msg">@Localizer["Sign in to start your session"].Value</p>
+            <p  class="login-box-msg">username (user) , passsword(user)</p>
+
+            <form method="post"
+                  id="create"
+                  data-ajax="true"
+                  data-ajax-method="POST"
+                  data-ajax-begin="begin"
+                  data-ajax-success="successLogin"
+                  data-ajax-failure="failure"
+                  data-ajax-complete="complete">
+                <div id="overlay" class="overlay-wrapper  d-none ">
+                    <div class="overlay">
+                        <i class="fas fa-3x fa-sync-alt fa-spin text-primary"></i>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input asp-for="@Model.LoginForm.Email" type="text" class="form-control" placeholder="@Localizer["email or username"].Value">
+
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                </div>
+                <span asp-validation-for="@Model.LoginForm.Email" class="text-danger mb-1 d-block"></span>
+
+                <div class="input-group mb-3">
+                    <input asp-for="@Model.LoginForm.Password" type="password" class="form-control" placeholder="@Localizer["password"].Value">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+                <span asp-validation-for="@Model.LoginForm.Password" class="text-danger mb-1 d-block"></span>
+
+                <div class="row">
+
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary btn-block">@Localizer["submit"].Value</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+</div>
+@section Scripts{
+    @await Html.PartialAsync("_ValidationScriptsPartial.cshtml")
+}

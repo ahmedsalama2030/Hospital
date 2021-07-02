@@ -1,0 +1,123 @@
+﻿
+@page
+@model Web.Areas.Admin.Pages.Departments.IndexModel
+@{
+    string headerName = "departments";
+}
+@section Styles{
+    @await Html.PartialAsync("_DataTableStylesPartial.cshtml")
+    <link rel="stylesheet" href="~/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+}
+<partial name="_ContentHeaderMain" model="headerName" />
+@Html.AntiForgeryToken()
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header border-0 m-0  ">
+                        <div class="d-flex flex-md-row flex-column flex-sm-column justify-content-between">
+                            <div id="search " class="   mb-1">
+                                <div style="direction:ltr" class="input-group input-group-sm   ">
+                                    <input id="text-search" type="search" class="form-control">
+                                    <select id="select-search" class="custom-select custom-select-sm">
+                                        <option value="name">@Localizer["name"].Value</option>
+
+                                    </select>
+                                    <span class="input-group-append">
+                                        <button id="btn-search" type="button" class="btn btn-info btn-flat"> <i class="fa fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </div>
+                            <partial name="_lengthMenu" />
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+
+
+                        <table id="mainTable" class="text-capitalize table text-center table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+                            <thead>
+                                <tr>
+
+                                    <th>
+                                        <div class="icheck-primary d-inline">
+                                            <input type="checkbox" id="checkboxmain">
+                                            <label for="checkboxmain">
+                                            </label>
+                                        </div>
+                                    </th>
+                                    <th>@Localizer["name"].Value</th>
+                                    <th>@Localizer["description"].Value</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var question in Model.Departments)
+                                {
+                                    <tr>
+                                        <td>
+                                            <div class="icheck-primary d-inline">
+                                                <input onchange="subCheck(this)" class="check-sub" type="checkbox" id="@question.Id">
+                                                <label for="@question.Id"> </label>
+                                            </div>
+                                        </td>
+                                        <td>@(Model.lang=="en" ? question.Name: question.NameAr)</td>
+                                        <td>@(Model.lang=="en" ? question.description: question.descriptionAr)</td>
+                                        <td class="d-none hidden">@question.Id</td>
+
+                                    </tr>
+                                }
+                            </tbody>
+
+
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<partial name="_DeleteAllModel" />
+
+@section Scripts{
+    @await Html.PartialAsync("_ValidationScriptsPartial.cshtml")
+    @await Html.PartialAsync("_DataTableScriptsPartial.cshtml")
+    <script>
+             var url = "/Admin/Departments/Index?handler=NewsList";
+            var urlAction = "/Admin/Departments/";
+            var colums = [
+                 {
+                    data: null,
+                    render: function (data, type, row) {
+                          return `<div      class='icheck-primary d-inline  '>
+                                    <input  onchange='subCheck(this)'  class="check-sub"   type = 'checkbox' id = '${data.id}'   >
+                                        <label for='${data.id}'>
+                                        </label>
+                                        </div>`
+                     }
+
+                },
+
+                // For Student.Firstname
+                { data: "@Model.lang" === "en" ? "name" : "nameAr"  },
+                { data: "@Model.lang" === "en" ? "description" : "descriptionAr"  },
+                { data: "id" }
+            ];
+            var lang = "@Model.lang";
+            var exportLangth = [1, 2];
+              $("#mainTable").setupDataTable(url, colums, lang, urlAction,@Model.length, exportLangth);
+
+
+
+
+    </script>
+
+}
+

@@ -1,0 +1,20 @@
+﻿@using Web
+@using Web.Models
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper "*, Web"
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Web.Resources;
+@using Microsoft.Extensions.Localization;
+@inject IStringLocalizer<Resource> Localizer
+@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+@using Web.helpers.tageHelper
+@using Core.Dtos_User
+@using Web.Areas.Admin.Pages.Models
+@using Core.Entities
+@using Web.helpers.pagination
+@using Microsoft.AspNetCore.Antiforgery;
+@using Infrastructure.Services
+
+@inject CulutureServices CulutureServices

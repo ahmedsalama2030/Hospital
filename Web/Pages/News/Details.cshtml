@@ -1,0 +1,32 @@
+﻿@page "{id:Guid}"
+@model Web.Pages.News.DetailsModel
+@{
+    var culture = Model.lang;
+    var title = "news";
+
+}
+<partial name="_coverPage" model="@title" />
+
+<section class="news-info section-settings">
+    <div class="container">
+        <div class="content">
+            <i class="fas fa-plus-circle"></i>
+            <h2>@(culture == "en" ? Model.news.Title : Model.news.TitleAr)</h2>
+            <p>@(culture == "en" ? Model.news.description : Model.news.descriptionAr)</p>
+        </div>
+        <div class="our-gallery">
+            @if (Model.news.NewsImages.Any())
+            {
+                @foreach (var img in Model.news.NewsImages)
+                {
+                    <div>
+                        <img   onerror="this.onerror=null;this.src='/img/news.jpg'" src="@Url.Content("~/"+img.Path)" alt="News image">
+                    </div>
+
+                }
+            }
+
+
+        </div>
+    </div>
+</section>

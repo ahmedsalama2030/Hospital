@@ -1,0 +1,157 @@
+﻿@page
+@model Web.Areas.Admin.Pages.Clinic_schedual.IndexModel
+@{
+    string headerName = "clinicreservation";
+ 
+}
+@section Styles{
+    @await Html.PartialAsync("_DataTableStylesPartial.cshtml")
+    <link rel="stylesheet" href="~/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+}
+<partial name="_ContentHeaderMain" model="headerName" />
+@Html.AntiForgeryToken()
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header border-0 m-0  ">
+                        <div class="d-flex flex-md-row flex-column flex-sm-column justify-content-between">
+                            <div id="search " class="   mb-1">
+                                <div style="direction:ltr" class="input-group input-group-sm   ">
+                                    <input id="text-search" type="search" class="form-control">
+                                    <select id="select-search" class="custom-select custom-select-sm">
+                                        <option value="name">@Localizer["name"].Value</option>
+
+                                    </select>
+                                    <span class="input-group-append">
+                                        <button id="btn-search" type="button" class="btn btn-info btn-flat"> <i class="fa fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </div>
+                            <partial name="_lengthMenu" />
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+
+
+                        <table data-lang="@Model.lang" id="mainTable" class="text-capitalize table text-center table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+                            <thead>
+                                <tr>
+
+                                    <th>
+                                        <div class="icheck-primary d-inline">
+                                            <input type="checkbox" id="checkboxmain">
+                                            <label for="checkboxmain">
+                                            </label>
+                                        </div>
+                                    </th>
+                                    <th>@Localizer["name"].Value</th>
+                                    <th>@Localizer["saturday"].Value</th>
+                                    <th>@Localizer["sunday"].Value</th>
+                                    <th>@Localizer["monday"].Value</th>
+                                    <th>@Localizer["tuesday"].Value</th>
+                                    <th>@Localizer["wednesday"].Value</th>
+                                    <th>@Localizer["thursday"].Value</th>
+                                    <th>@Localizer["friday"].Value </th>
+                                    <th>@Localizer["timeto"].Value </th>
+                                    <th>@Localizer["timefrom"].Value </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var clinic in Model.clinicScheduls)
+                                {
+                                    <tr>
+                                        <td>
+                                            <div class="icheck-primary d-inline">
+                                                <input onchange="subCheck(this)" class="check-sub" type="checkbox" id="@clinic.Id">
+                                                <label for="@clinic.Id"> </label>
+                                            </div>
+                                        </td>
+                                        <td>@(Model.lang=="en" ?   clinic.ClinicName: clinic.ClinicNameAr)</td>
+                                        <td>  @clinic.IsSaturday</td>
+                                        <td> @clinic.IsSunday    </td>
+                                        <td> @clinic.IsMonday </td>
+                                        <td>@clinic.IsTuesday  </td>
+                                        <td>@clinic.IsWednesday  </td>
+                                        <td>@clinic.IsThursday  </td>
+                                        <td>@clinic.IsFriday  </td>
+                                        <td>@clinic.TimeFrom</td>
+                                        <td>@clinic.TimeTo</td>
+                                        <td class="d-none hidden">@clinic.Id</td>
+
+                                    </tr>
+                                }
+                            </tbody>
+
+
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<partial name="_DeleteAllModel" />
+
+@section Scripts{
+    @await Html.PartialAsync("_ValidationScriptsPartial.cshtml")
+    @await Html.PartialAsync("_DataTableScriptsPartial.cshtml")
+<script>
+             var url = "/Admin/Clinic-schedual/Index?handler=NewsList";
+            var urlAction = "/Admin/Clinic-schedual/";
+            var colums = [
+
+                {
+                    data: null,
+                    render: function (data, type, row) {
+
+                         return `<div      class='icheck-primary d-inline  '>
+                                    <input  onchange='subCheck(this)'  class="check-sub"   type = 'checkbox' id = '${data.id}'   >
+                                        <label for='${data.id}'>
+                                        </label>
+                                        </div>`
+                    }
+
+                },
+
+                // For Student.Firstname
+                {
+                    data: "@Model.lang" === "en" ? "clinicName" : "clinicNameAr",
+
+
+                },
+                { data: "isSaturday", "render": function (data) { return  checkIcon(data)}  },
+                { data: "isSunday", "render": function (data) { return checkIcon(data) } },
+                { data: "isMonday", "render": function (data) { return checkIcon(data) } },
+                { data: "isTuesday", "render": function (data) { return checkIcon(data) } },
+                { data: "isWednesday", "render": function (data) { return checkIcon(data) } },
+                { data: "isThursday", "render": function (data) { return checkIcon(data) } },
+                { data: "isFriday", "render": function (data) { return checkIcon(data) } },
+                { data: "timeTo" },
+                { data: "timeFrom" },
+                { data: "id" }
+            ];
+            var lang = "@Model.lang";
+            var exportLangth = [1, 2, 3, 4, 5, 6, 7, 8, 9,10];
+              $("#mainTable").setupDataTable(url, colums, lang, urlAction,@Model.length, exportLangth);
+
+             function checkIcon(data) {
+
+                if ((data.toString().toLowerCase() === 'true'))
+                    return "<i class='fa  fa-check-circle text-primary'></i>";
+                else
+                    return "<i class='fa  fa-minus-circle text-danger'></i>";
+
+                 }
+
+</script>
+
+}
+

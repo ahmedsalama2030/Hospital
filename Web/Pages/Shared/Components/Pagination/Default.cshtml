@@ -1,0 +1,17 @@
+﻿@model PaginationConfig
+ 
+@if (Model.paginationHeader.TotalPages != 1)
+{
+<bdi>
+    <div class="navivate pagination-container" data-lengthpage="@Model.LengthPage"  data-url="@Model.Url" style="margin:3rem 0; text-align:center; " data-lengthPage="4">
+        <span id="decrement" class="navgation navigation-btn   fas fa-angle-left @(Model.paginationHeader.CurrentPage == 1 ? "active" : "")" data-type="decrement"></span>
+        <span id="increment" class=" navgation navigation-btn   fas fa-angle-right @(Model.paginationHeader.CurrentPage == Model.paginationHeader.TotalPages ? "active" : "")" data-type="increment"></span>
+        @if(Model.ShowInfo){
+        <span style="margin:0 1rem"> <i id="currentPage">@Model.paginationHeader.CurrentPage</i> / <i id="totalPages">@Model.paginationHeader.TotalPages</i>  </span>
+        }
+    </div>
+
+</bdi>
+
+
+}

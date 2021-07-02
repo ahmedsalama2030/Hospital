@@ -1,0 +1,38 @@
+﻿@model IEnumerable<HospitalGetlDto>
+
+@{
+    var pagination = ViewBag.pagination as PaginationHeader;
+      var culture = CulutureServices.GetCulture();   //  get culture name from  services
+     
+}
+
+<section class="hospitals section-settings">
+    <div class="container">
+        <div class="header">
+            <span class="name">@Localizer["hospitals"].Value  </span>
+
+            @* Pagination *@
+            @await Component.InvokeAsync("Pagination", new PaginationConfig { paginationHeader = pagination, Url = "/Hospitals/Index", ShowInfo = false, LengthPage = 6 })
+
+        </div>
+        <div class="hosppital-container " id="update">
+            @foreach (var hospital in Model)
+            {
+                <div class="box animate" data-animate="zoomIn" >
+                    <i class="fas fa-hospital"></i>
+
+                    <h2>@(culture == "en"? hospital.Name : hospital.NameAr)  </h2>
+                    <p>@(culture == "en"? hospital.description.Substring(0,100) : hospital.descriptionAr.Substring(0,100) )    .....</p>
+                    <a class="btn-link" asp-page ="/Hospitals/Details"   asp-route-Id="@hospital.Id">
+                        @Localizer["viewdetails"].Value
+                    </a>
+
+                </div>
+            }
+
+        </div>
+
+
+
+    </div>
+</section>

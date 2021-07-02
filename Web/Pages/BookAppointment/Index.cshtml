@@ -1,0 +1,102 @@
+﻿@page "{id:Guid?}"
+@model Web.Pages.BookAppointment.IndexModel
+@{
+    var name = "book appointment";
+    }
+<partial name="_coverPage" model="@name" />
+
+<section class="contact-us section-settings">
+    <div class="container">
+        <h2>@Localizer["reserve the appointment"].Value</h2>
+        <div class="contact-container">
+            <form id="book"
+                  data-ajax="true"
+                  data-ajax-method="POST"
+                  data-ajax-mode="replace"
+                  data-ajax-loading="#loader"
+                  data-ajax-begin="begin"
+                  data-ajax-failure="failure"
+                  data-ajax-success="success">
+                <div class="form">
+                    @Html.AntiForgeryToken();
+                    <input type="hidden" asp-for="@Model.appointment.ClincName" />
+                    <input type="hidden" asp-for="@Model.appointment.Note" />
+                    <div>
+                        <label for="Name">@Localizer["fullname"].Value *</label>
+                        <input class="form-control" asp-for="@Model.appointment.PatientName" data-val="true">
+                        <span asp-validation-for="@Model.appointment.PatientName" class="text-danger"></span>
+
+                    </div>
+                    <div>
+                        <label for="">@Localizer["youremail"].Value *</label>
+                        <input class="form-control" asp-for="@Model.appointment.Email">
+                        <span asp-validation-for="@Model.appointment.Email" class="text-danger"></span>
+
+                    </div>
+                    <div>
+                        <label for="">@Localizer["yourphone"].Value *</label>
+                        <input class="form-control" asp-for="@Model.appointment.PhoneNumber" type="number">
+                        <span asp-validation-for="@Model.appointment.PhoneNumber" class="text-danger"></span>
+
+                    </div>
+                    <div>
+                        <label  for=""> @Localizer["note"]*</label>
+                        <input asp-for="@Model.appointment.Note" disabled>
+                        <span asp-validation-for="@Model.appointment.Note" class="text-danger"></span>
+
+
+                    </div>
+                    <div>
+                        <label for=""> @Localizer["clinic name"]*</label>
+                        <input asp-for="@Model.appointment.ClincName" disabled type="text">
+                        <span asp-validation-for="@Model.appointment.ClincName" class="text-danger"></span>
+
+                    </div>
+                    <div>
+                        <button id="btn-submit" type="submit" class="btn"> @Localizer["submit"].Value    </button>
+                        <span data-sucess="@Localizer["sucess send"]" data-failure="@Localizer["failure send"]" id="massage"></span>
+                        <span id="loader" style="display:none" class="fa  fa-spin fa-spinner"></span>
+                    </div>
+                 </div>
+            </form>
+            @await Component.InvokeAsync("AboutDetail") 
+
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+
+    @await Html.PartialAsync("_ValidationScriptsPartial.cshtml")
+<script src="~/js/lib/microsoft-signalr/signalr.min.js"></script>
+   <script>
+       let connection = new signalR.HubConnectionBuilder().withUrl("/appointmentHub").build();
+       connection.start().catch(function (err) {
+           return console.error(err.toString());
+       });
+       begin = function () {
+           $("#massage").html("");
+           $("#btn-submit").addClass("send-btn");
+
+       }
+       success = function (data) {
+           $("#massage").html(data);
+           $("#book").get(0).reset();
+           $("#btn-submit").removeClass("send-btn");
+           console.log('dsfs');
+           connection.invoke("SendAppointment").catch(function (err) {
+               return console.error(err.toString());
+           });
+           event.preventDefault();
+
+       }
+       failure = function (data) {
+           $("#massage").html(data);
+           $("#btn-submit").removeClass("send-btn");
+           
+       }
+         
+        </script>
+
+
+}

@@ -1,0 +1,44 @@
+﻿@page
+@model Web.Pages.News.IndexModel
+
+@using System.Globalization;
+@{
+
+    var culture = Model.lang;
+    var mainPath = Model.news;
+    var title = "news";
+
+}
+
+<partial name="_coverPage" model="@title" />
+<section class="news section-settings">
+    @Html.AntiForgeryToken();
+    <h2><span>@Localizer["lastest news"]</span></h2>
+    <div class="container">
+        <div class="content" id="update">
+            @foreach (var news in Model.news)
+            {
+                <div class="card animate" data-animate="zoomIn">
+                    <img src=@Url.Content("~/"+news.Path) onerror="this.onerror=null;this.src='/img/news.jpg'" />
+                    <a asp-page="Details" asp-route-Id="@news.Id.ToString()">
+                        <h4>@(culture == "en" ? news.Title : news.TitleAr)</h4>
+                        <p>
+                            @(culture == "en"? @news.CreatedDate.ToString("dd MMM yyyy") : @news.CreatedDate.ToString("dd MMM yyyy", new CultureInfo("ar-Eg")))
+                        </p>
+                    </a>
+                </div>
+            }
+
+        </div>
+        @* Pagination *@
+        @if (Model.news.Any())
+        {
+        @await Component.InvokeAsync("Pagination", new PaginationConfig { paginationHeader = Model.pagination, Url = "/News/Index", ShowInfo = true, LengthPage = 6 })
+        }
+
+    </div>
+
+
+</section>
+
+

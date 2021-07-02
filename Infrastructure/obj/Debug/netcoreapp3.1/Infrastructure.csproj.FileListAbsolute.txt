@@ -1,0 +1,15 @@
+D:\projects\Hospital\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.deps.json
+D:\projects\Hospital\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.runtimeconfig.json
+D:\projects\Hospital\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.runtimeconfig.dev.json
+D:\projects\Hospital\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.dll
+D:\projects\Hospital\Infrastructure\bin\Debug\netcoreapp3.1\Infrastructure.pdb
+D:\projects\Hospital\Infrastructure\bin\Debug\netcoreapp3.1\Core.dll
+D:\projects\Hospital\Infrastructure\bin\Debug\netcoreapp3.1\Core.pdb
+D:\projects\Hospital\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csprojAssemblyReference.cache
+D:\projects\Hospital\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.AssemblyInfoInputs.cache
+D:\projects\Hospital\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.AssemblyInfo.cs
+D:\projects\Hospital\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.CoreCompileInputs.cache
+D:\projects\Hospital\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.csproj.CopyComplete
+D:\projects\Hospital\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.dll
+D:\projects\Hospital\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.pdb
+D:\projects\Hospital\Infrastructure\obj\Debug\netcoreapp3.1\Infrastructure.genruntimeconfig.cache

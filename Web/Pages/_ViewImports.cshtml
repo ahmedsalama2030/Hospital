@@ -1,0 +1,23 @@
+﻿@using Web
+@using Web.Models
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper "*, Web"
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Web.Resources;
+@using Microsoft.Extensions.Localization;
+@inject IStringLocalizer<Resource> Localizer
+@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+@using Web.helpers.tageHelper
+@using Core.Dtos_User.Home
+@using Core.Dtos_User.Doctor
+@using Core.Dtos_User.hospital
+@using Core.Dtos_User.Sliders
+  @using Core.Dtos_User.ContactUs; 
+@using Core.Entities
+@using Web.helpers.pagination
+
+@using Infrastructure.Services
+
+@inject CulutureServices CulutureServices

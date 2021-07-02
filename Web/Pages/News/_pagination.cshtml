@@ -1,0 +1,23 @@
+﻿@using Core.Dtos_User.News;
+
+@model IEnumerable<NewsUserListDto>
+@using System.Globalization;
+
+
+@foreach (var news in Model)
+{
+<div class="card">
+    <img src=@Url.Content("~/img/news.jpg") onerror="this.onerror=null;this.src='/img/news.jpg'" />
+    <a asp-page="/News/Details" asp-route-Id="@news.Id.ToString()">
+        <h4>@(CulutureServices.GetCulture() == "en" ? news.Title : news.TitleAr)</h4>
+        <p>
+            @(CulutureServices.GetCulture() =="en"? @news.CreatedDate.ToString("dd MMM yyyy") : @news.CreatedDate.ToString("dd MMM yyyy", new CultureInfo("ar-Eg")))
+        </p>
+
+
+
+
+    </a>
+
+</div>
+}

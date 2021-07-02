@@ -1,0 +1,144 @@
+﻿@page
+@model Web.Areas.Admin.Pages.Doctors.IndexModel
+@{
+    string headerName = "doctors";
+}
+@section Styles{
+    @await Html.PartialAsync("_DataTableStylesPartial.cshtml")
+    <link rel="stylesheet" href="~/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+}
+<partial name="_ContentHeaderMain" model="headerName" />
+@Html.AntiForgeryToken()
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header border-0 m-0  ">
+                        <div class="d-flex flex-md-row flex-column flex-sm-column justify-content-between">
+                            <div id="search " class="   mb-1">
+                                <div style="direction:ltr" class="input-group input-group-sm   ">
+                                    <input id="text-search" type="search" class="form-control">
+                                    <select id="select-search" class="custom-select custom-select-sm">
+                                        <option value="name">@Localizer["name"].Value</option>
+                                        <option value="department">@Localizer["department"].Value</option>
+                                        <option value="university">@Localizer["university"].Value</option>
+                                        <option value="isConsultant">@Localizer["isConsultant"].Value</option>
+                                    </select>
+                                    <span class="input-group-append">
+                                        <button id="btn-search" type="button" class="btn btn-info btn-flat"> <i class="fa fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </div>
+                            <partial name="_lengthMenu" />
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="mainTable" class="text-capitalize table text-center table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+                            <thead>
+                                <tr>
+
+                                    <th>
+                                        <div class="icheck-primary d-inline">
+                                            <input type="checkbox" id="checkboxmain">
+                                            <label for="checkboxmain">
+                                            </label>
+                                        </div>
+                                    </th>
+                                    <th>@Localizer["name"].Value</th>
+                                    <th>@Localizer["special"].Value</th>
+                                    <th>@Localizer["degree"].Value</th>
+                                    <th>@Localizer["university"].Value</th>
+                                    <th>@Localizer["department"].Value</th>
+                                    <th>@Localizer["isConsultant"].Value</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var doctor in Model.Doctors)
+                                {
+                                    <tr>
+                                        <td>
+                                            <div class="icheck-primary d-inline">
+                                                <input onchange="subCheck(this)" class="check-sub" type="checkbox" id="@doctor.Id">
+                                                <label for="@doctor.Id"> </label>
+                                            </div>
+                                        </td>
+                                        <td>@(Model.lang=="en" ? doctor.Name: doctor.NameAr)</td>
+                                        <td>@(Model.lang=="en" ? doctor.Special: doctor.SpecialAr)</td>
+                                        <td>@(Model.lang=="en" ? doctor.Degree: doctor.DegreeAr)</td>
+                                        <td>@(Model.lang=="en" ? doctor.University: doctor.UniversityAr)</td>
+                                        <td>@(Model.lang=="en" ? doctor.DepartmentName: doctor.DepartmentNameAr)</td>
+                                        <td>@doctor.IsConsultant</td>
+                                        <td class="d-none hidden">@doctor.Id</td>
+
+                                    </tr>
+                                }
+                            </tbody>
+
+
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<partial name="_DeleteAllModel" />
+
+@section Scripts{
+    @await Html.PartialAsync("_ValidationScriptsPartial.cshtml")
+    @await Html.PartialAsync("_DataTableScriptsPartial.cshtml")
+    <script>
+        let checkIcon = (data) => {
+             if ((data.toString().toLowerCase() === 'true'))
+                return "<i class='fa  fa-check-circle text-primary'></i>";
+            else
+                return "<i class='fa  fa-minus-circle text-danger'></i>";
+           }
+             var url = "/Admin/Doctors/Index?handler=NewsList";
+            var urlAction = "/Admin/Doctors/";
+            var colums = [
+
+                {
+                    data: null,
+                    render: function (data, type, row) {
+
+                         return `<div      class='icheck-primary d-inline  '>
+                                    <input  onchange='subCheck(this)'  class="check-sub"   type = 'checkbox' id = '${data.id}'   >
+                                        <label for='${data.id}'>
+                                        </label>
+                                        </div>`
+
+                    }
+
+                },
+
+                // For Student.Firstname
+
+                { data: "@Model.lang" === "en" ? "name" : "nameAr"  },
+                { data: "@Model.lang" === "en" ? "special" : "specialAr"  },
+                { data: "@Model.lang" === "en" ? "degree" : "degreeAr"  },
+                { data: "@Model.lang" === "en" ? "university" : "universityAr"  },
+                { data: "@Model.lang" === "en" ? "departmentName" : "departmentNameAr"  },
+                { data: "isConsultant", "render": function (data) { return checkIcon(data) } },
+                { data: "id" }
+            ];
+            var lang = "@Model.lang";
+            var exportLangth = [1, 2,3,4,5,6];
+              $("#mainTable").setupDataTable(url, colums, lang, urlAction,@Model.length, exportLangth);
+
+
+
+
+    </script>
+
+}
+

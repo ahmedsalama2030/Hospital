@@ -1,0 +1,38 @@
+﻿@page
+ 
+@model Web.Pages.AboutUs.IndexModel
+
+@{
+     var title = "aboutus";
+}
+
+<partial name="_coverPage" model="@title" />
+<section class="aboutus   section-settings">
+    <div class="container">
+        <div class="video  ">
+            <h2>@Localizer["videoaboutus"].Value</h2>
+            <iframe src="@Url.Content(Model.aboutUs.VideoPath)" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+
+         <div class="history">
+            <h2>@Localizer["aboutus"].Value </h2>
+            <div>
+                @Html.Raw(CulutureServices.GetCulture() == "en" ? Model.aboutUs.AboutUsDescription : Model.aboutUs.AboutUsDescriptionAr)
+
+            </div>
+
+
+            <div class="gallery">
+                @*<img src="@Url.Content(Model.aboutUs.Path1)" alt="">*@
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,24 @@
+﻿@model ContactUsDto
+@{ 
+    var culture = CulutureServices.GetCulture();   //  get culture name from  services
+}
+<div class="detail">
+    <h2>@Localizer["contactdetails"].Value</h2>
+    <p>  @(culture == "en"? Model.AboutUs : Model.AboutUsAr)  </p>
+    <ul>
+        <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>@(culture == "en"? Model.Address : Model.AddressAr)</span>
+        </li>
+        <li>
+            <i class="fas fa-phone-alt "></i>
+            <span>@Model.PhoneNumbermain</span>
+        </li>
+        <li>
+            <i class="fas fa-envelope"></i>
+            <span>@Model.Email</span>
+        </li>
+    </ul>
+
+    <iframe src="@Url.Content(Model.MapPath)" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>

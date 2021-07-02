@@ -1,0 +1,97 @@
+﻿@model HeaderFooterDetailsDto
+@{ 
+    var culture = CulutureServices.GetCulture();   //  get culture name from  services 
+
+}
+@* Book appointment section *@
+<section class="Book">
+    <div class="content">
+        <p class="animate " data-animate="@(culture=="en"?"slideInLeft":"slideInRight")">@Localizer["contact book your appointment"]</p>
+        <a class="animate btn" data-animate="@(culture=="en"?"slideInRight":"slideInLeft")" asp-page="/Clinics-Reservation/Index"   >@Localizer["book"]</a>
+    </div>
+
+</section>
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="word animate"data-animate="@(culture=="en"?"slideInLeft":"slideInRight")">
+                <h2> @Localizer["aboutus"].Value</h2>
+                <p> @(culture=="en"? @Model.AboutUs : @Model.AboutUsAr) </p>
+                <div class="social">
+                    <a href="@Url.Content(Model.FacebookPath)"><i class="fab fa-facebook-f"></i></a>
+                    <a href="@Url.Content(Model.YoutubePath)"><i class="fab fa-youtube"></i></a>
+                    <a href="@Url.Content(Model.LinkedInPath)"><i class="fab fa-linkedin-in"></i></a>
+
+                </div>
+            </div>
+            <div class="links animate" data-animate="zoomIn">
+                <h2>@Localizer["quickelinks"].Value</h2>
+                <ul>
+                    <li>
+                        <a asp-page="/home/Index" >
+                            <i class="fas fa-arrow-right"></i>
+                            @Localizer["home"].Value
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-page="/doctors/Index" >
+                            <i class="fas fa-arrow-right"></i>
+                            @Localizer["doctors"].Value
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-page="/AboutUs/Index" >
+                            <i class="fas fa-arrow-right"></i>
+                            @Localizer["aboutus"].Value
+                        </a>
+                    </li>
+                    <li>
+                        <a  asp-page="/Departments/Index">
+                            <i class="fas fa-arrow-right"></i>
+                            @Localizer["departments"].Value
+                        </a>
+                    </li>
+                    <li>
+                        <a  asp-page="/Clinics-Reservation">
+                            <i class="fas fa-arrow-right"></i>
+                            @Localizer["clinicsreservation"].Value
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-page="/ContactUs/Index">
+                            <i class="fas fa-arrow-right"></i>
+                            @Localizer["contactus"].Value
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-page="/Common-Questions/Index">
+                            <i class="fas fa-arrow-right"></i>
+                            @Localizer["commonquestion"].Value
+                        </a>
+                    </li>
+                    <li>
+                        <a asp-page="/News/Index">
+                            <i class="fas fa-arrow-right"></i>
+                            @Localizer["news"].Value
+                        </a>
+                    </li>
+
+                   
+                </ul>
+            </div>
+            <dic class="contact animate"data-animate="@(culture=="en"?"slideInRight":"slideInLeft")">
+                <h2> @Localizer["contactus"].Value</h2>
+                <div> @(culture=="en"? @Model.Address : @Model.AddressAr)   </div>
+                <div>@Model.Email</div>
+                <div>@Model.PhoneNumbermain</div>
+            </dic>
+        </div>
+
+    </div>
+    <div class="rights">
+        
+        <div class=" animate" data-animate="@(culture=="en"?"slideInLeft":"slideInRight")">@Localizer["rights"].Value</div>
+       
+        <div class=" animate" data-animate="@(culture=="en"?"slideInRight":"slideInLeft")">@Localizer["design"].Value</div>
+    </div>
+</footer>

@@ -1,0 +1,95 @@
+﻿@page
+ 
+@model Web.Pages.Clinics_Reservation.IndexModel
+
+@{  var title = "clinicreservation"; }
+
+<partial name="_coverPage" model="@title" />
+<section class=" clinic time-table section-settings">
+    <div class="container">
+        <div class="instructions">
+            <h3>@Localizer["clinicreservationinstructions"].Value</h3>
+            <ul>
+                <li>@Localizer["reservationbefore48hours"].Value  </li>
+            </ul>
+        </div>
+        <div class="table-content animate" data-animate="zoomIn">
+            <table>
+                <thead>
+                    <tr>
+                        <td>@Localizer["clinics"].Value</td>
+                        <td>@Localizer["saturday"].Value</td>
+                        <td>@Localizer["sunday"].Value</td>
+                        <td>@Localizer["monday"].Value</td>
+                        <td>@Localizer["tuesday"].Value</td>
+                        <td>@Localizer["wednesday"].Value</td>
+                        <td>@Localizer["thursday"].Value</td>
+                        <td>@Localizer["friday"].Value </td>
+                        <td>@Localizer["time"].Value </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var clinic in Model.clinics)
+                    {
+                        <tr>
+                            <td class="first">
+                                @(Model.lang == "en"? clinic.ClinicName : clinic.ClinicNameAr)
+                            </td>
+                            <td>
+                                @if (clinic.IsSaturday)
+                                {
+                                    <a asp-Page="/BookAppointment/index" asp-route-today="saturday" asp-route-Id="@clinic.Id" class=" btn  "> @Localizer["book"].Value </a>
+                                }
+
+                            </td>
+                            <td>
+                                @if (clinic.IsSunday)
+                                {
+                                    <a asp-page="/BookAppointment/index" asp-route-today="sunday" asp-route-Id="@clinic.Id" class=" btn  "> @Localizer["book"].Value </a>
+                                }
+                            </td>
+                            <td>
+                                @if (clinic.IsMonday)
+                                {
+                                    <a asp-Page="/BookAppointment/index" asp-route-today="monday" asp-route-Id="@clinic.Id" class=" btn  "> @Localizer["book"].Value </a>
+                                }
+                            </td>
+                            <td>
+                                @if (clinic.IsTuesday)
+                                {
+                                    <a asp-Page="/BookAppointment/index" asp-route-today="tuesday" asp-route-Id="@clinic.Id" class=" btn  "> @Localizer["book"].Value </a>
+                                }
+                            </td>
+                            <td>
+                                @if (clinic.IsWednesday)
+                                {
+                                    <a asp-Page="/BookAppointment/index" asp-route-today="wednesday" asp-route-Id="@clinic.Id" class=" btn  "> @Localizer["book"].Value </a>
+                                }
+                            </td>
+                            <td>
+                                @if (clinic.IsThursday)
+                                {
+                                    <a asp-Page="/BookAppointment/index" asp-route-today="thursday" asp-route-Id="@clinic.Id" class=" btn  "> @Localizer["book"].Value </a>
+                                }
+                            </td>
+                            <td>
+                                @if (clinic.IsFriday)
+                                {
+                                    <a asp-Page="/BookAppointment/index" asp-route-today="F\friday" asp-route-Id="@clinic.Id" class=" btn  "> @Localizer["book"].Value </a>
+                                }
+                            </td>
+
+                            <td style="direction:ltr" class="last"> @clinic.TimeFrom - @clinic.TimeTo </td>
+
+
+
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>

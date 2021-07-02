@@ -1,0 +1,11 @@
+﻿@{
+    Layout = "_LayoutError";
+    var culture = CulutureServices.GetCulture();   //  get culture name from  services
+
+}
+
+<div class="container-error">
+    <h2>@Localizer["Oppos"] !</h2>
+    <p>@Localizer["plase try again later or feel free to contact us if this problem persists"]</p>
+    <a asp-controller="Home">@Localizer["home"]</a>
+</div>

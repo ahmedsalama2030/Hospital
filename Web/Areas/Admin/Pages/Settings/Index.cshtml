@@ -1,0 +1,100 @@
+﻿@page
+@model Web.Areas.Admin.Pages.Settings.IndexModel
+@using Web.Areas.Admin.Pages.Settings
+@{
+    var headerInfo = new ContentHeaderLevels() { level1 = "Settings", level2 = "create" };
+    var modelSend = new ViewModel();
+    modelSend.settings = Model.settings;
+}
+@section Styles{
+    <link rel="stylesheet" href="~/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+}
+<partial name="_ContentHeaderSub" model="headerInfo " />
+<section class="content">
+    <div class="container-fluid">
+        <div class="row text-capitalize">
+
+            <div class="col-12 col-md-8   mx-md-auto">
+                <form enctype="multipart/form-data"
+                      method="post"
+                      id="create"
+                      data-ajax="true"
+                      data-ajax-method="POST"
+                      data-ajax-begin="begin"
+                      data-ajax-success="successEdit"
+                      data-ajax-failure="failure"
+                      data-ajax-complete="complete"
+                      name="create">
+                    <input type="hidden" asp-for="@Model.settings.SiteLogoPath" />
+                    <input type="hidden" asp-for="@Model.settings.Id" />
+                    <input type="hidden" asp-for="@Model.settings.ManegerPhotoPath" />
+                    <div class="card card-primary card-outline card-outline-tabs">
+                        <div id="overlay" class="overlay-wrapper  d-none ">
+                            <div class="overlay">
+                                <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+                            </div>
+                        </div>
+                        <div class="card-header p-0 border-bottom-0">
+                            <ul class="nav nav-tabs text-center" id="custom-tabs-four-tab" role="tablist">
+
+                                <li class="nav-item flex-grow-1 flex-shrink-1">
+                                    <a class="nav-link active" id="custom-tabs-four-profile-tab" data-toggle="pill" href="#custom-tabs-four-profile" role="tab" aria-controls="custom-tabs-four-profile" aria-selected="true">@Localizer["site settings"]</a>
+                                </li>
+                                <li class="nav-item flex-grow-1 flex-shrink-1">
+                                    <a class="nav-link" id="custom-tabs-four-messages-tab" data-toggle="pill" href="#custom-tabs-four-messages" role="tab" aria-controls="custom-tabs-four-messages" aria-selected="false">@Localizer["manager"]</a>
+                                </li>
+                                <li class="nav-item flex-grow-1 flex-shrink-1">
+                                    <a class="nav-link" id="custom-tabs-four-aboutus-tab" data-toggle="pill" href="#custom-tabs-four-aboutus" role="tab" aria-controls="custom-tabs-four-aboutus" aria-selected="false">@Localizer["aboutus"]</a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="tab-content" id="custom-tabs-four-tabContent">
+
+                                <div class="tab-pane fade active show " id="custom-tabs-four-profile" role="tabpanel" aria-labelledby="custom-tabs-four-profile-tab">
+                                    <partial name="_siteSettingForm" model="@modelSend" />
+                                </div>
+                                <div class="tab-pane fade" style="direction:rtl" id="custom-tabs-four-messages" role="tabpanel" aria-labelledby="custom-tabs-four-messages-tab">
+                                    <partial name="_managerForm" model="@modelSend" />
+                                </div>
+                                <div class="tab-pane fade" style="direction:rtl" id="custom-tabs-four-aboutus" role="tabpanel" aria-labelledby="custom-tabs-four-aboutus-tab">
+                                    <partial name="_AboutUsForm" model="@modelSend" />
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="card-footer text-center  ">
+
+                            <div>
+                                <button id="Submit" type="submit" class="btn btn-primary  ">@Localizer["submit"]</button>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</section>
+<partial name="_DeleteAllModel" />
+@section Scripts{
+    @await Html.PartialAsync("_ValidationScriptsPartial.cshtml")
+    @await Html.PartialAsync("_DataTableScriptsPartial.cshtml")
+    <script>
+    $(function () {
+        // parameters [ languagePage, continer-Images,Size-Files,Count-Files ]
+        $("#SiteLogophoto").UploadImage("@Model.lang", $("#sitelogocontainer"), 1, 1, ['jpg', 'png','jpeg']);
+        $("#ManagerPhoto").UploadImage("@Model.lang", $("#managerPhotocontainer"), 1, 1, ['jpg', 'png','jpeg']);
+    });
+    </script>
+}

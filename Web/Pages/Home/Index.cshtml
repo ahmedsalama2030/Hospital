@@ -1,0 +1,82 @@
+﻿@page
+@model Web.Pages.Home.IndexModel
+ @{
+    var culture = Model.lang;   //  get culture name from  services
+}
+
+    @* slider Component *@
+    @await Component.InvokeAsync("Sliders")
+ 
+@* maneger-word  *@
+<section class="maneger-word section-settings overflow-hidden ">
+    <div class="container">
+        <div class="row ">
+            <div class="word  animate" data-animate="@(culture=="en"?"zoomInLeft":"zoomInRight")" >
+                <h2  >@(culture == "en"? Model.home.ManegerHead : Model.home.ManegerHeadAr)   </h2>
+                <h3>@(culture == "en"? Model.home.ManegerName : Model.home.ManegerNameAr)    </h3>
+                <p> @(culture == "en"? Model.home.ManegerWord : Model.home.ManegerWordAr)  </p>
+            </div>
+            <div class="image-box animate" data-animate="@(culture=="en"?"zoomInRight":"zoomInLeft")" >
+                <img  onerror="this.onerror=null;this.src='/img/manager.jpg'" src=" @Url.Content("~/"+Model.home.ManegerPhotoPath)" alt="">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@* Hospitals Component *@
+@await Component.InvokeAsync("Hospitals")
+ @section scripts {
+   <script>
+        "use strict"; // slider
+         let slideIndex = 0;
+        let slides = document.querySelectorAll(".slides .slide");
+        let dotsDiv = document.createElement("div");
+        dotsDiv.classList.add("dots");
+        document.querySelector(".slides").appendChild(dotsDiv);
+        slides.forEach((slide, index) => {
+            const url = slide.dataset.url;
+            slide.classList.add("slide-background");
+            slide.style.backgroundImage = "url(" + url + ")";
+            let span = document.createElement("span");
+            span.dataset.index = index + 1;
+            if (index === 0) span.classList.add("active");
+            span.addEventListener("click", (e) => {
+                const index = e.target.dataset.index;
+                selectedSlide(index);
+            });
+            dotsDiv.appendChild(span);
+        });
+        let dots = document.querySelectorAll(".slides .dots span");
+
+        if (backgroundOption !== undefined && backgroundOption === "yes") {
+            RunSildes();
+        }
+
+        let RunSildes = () => {
+            intervalSildes = setInterval(() => {
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+
+                slideIndex++;
+
+                if (slideIndex > slides.length) {
+                    slideIndex = 1;
+                }
+
+                changeActive(dots[slideIndex - 1]);
+                slides[slideIndex - 1].style.display = "block";
+            }, 5000);
+        };
+
+        let selectedSlide = (index) => {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            changeActive(dots[index - 1]);
+            slides[index - 1].style.display = "block";
+        }; // ./slider
+    </script>
+ }

@@ -1,0 +1,53 @@
+﻿@page
+@model Web.Pages.Departments.DetailsModel
+ @{
+     var title = "departments";
+     var lang = Model.lang;
+     var dept = Model.department;
+}
+<partial name="_coverPage" model="@title" />
+<section class="department-info section-settings ">
+    <div class="container">
+        <div class="layout">
+            <div>
+                <div class="content">
+                    <h2>  <span> @Localizer["department"] @(lang == "en" ? dept.Name : dept.NameAr)</span></h2>
+                    <p>@(lang == "en" ? dept.description : dept.descriptionAr)</p>
+                </div>
+                @if (dept.DepartmentServices.Any())
+                {
+                    <div class="content services">
+                        <h2><span>@Localizer["the services"]</span></h2>
+                        @foreach (var deptsevices in dept.DepartmentServices)
+                        {
+                            <div>
+                                <i class="fas fa-hand-holding-medical"></i>
+                                <p> @(lang == "en" ? deptsevices.Name : deptsevices.NameAr)</p>
+                            </div>
+                        }
+
+                    </div>
+                }
+                @if (dept.DepartmentImages.Any())
+                {
+                    <div class="content">
+                        <h2> <span>@Localizer["our gallery"] </span></h2>
+                        <div class="image">
+                            @foreach (var images in dept.DepartmentImages)
+                            {
+                                <img src="@Url.Content("~/"+images.Path)" alt="image-galary">
+                             }
+                            
+
+                        </div>
+                    </div>
+                }
+            </div>
+            <div>
+                <partial name="_contactus">
+            </div>
+        </div>
+
+    </div>
+
+</section>

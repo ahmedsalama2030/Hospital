@@ -1,0 +1,140 @@
+﻿@page
+@model Web.Areas.Admin.Pages.Clinic_schedual.CreateModel
+@{
+    var headerInfo = new ContentHeaderLevels() { level1 = "Clinic-schedual", level2 = "create" };
+}
+@section Styles{
+    <link rel="stylesheet" href="~/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+
+}
+<partial name="_ContentHeaderSub" model="headerInfo " />
+<section class="content">
+    <div class="container-fluid">
+        <div class="row text-capitalize">
+            <div class="col-12 col-sm-8 mx-auto">
+                <div class="card card-primary">
+
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form method="post"
+                          id="create"
+                          data-ajax="true"
+                          data-ajax-method="POST"
+                          data-ajax-begin="begin"
+                          data-ajax-success="success"
+                          data-ajax-failure="failure"
+                          data-ajax-complete="complete"
+                          name="create">
+                        <div class="card-body">
+                            <div id="overlay" class="overlay-wrapper  d-none ">
+                                <div class="overlay">
+                                    <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+                                </div>
+                            </div>
+                            <div class="inputs">
+                                <div class="form-group">
+                                    <label>@Localizer["nameEn"]</label>
+                                    <input asp-for="@Model.clinicSchedul.ClinicName" type="text" class="form-control">
+                                    <span asp-validation-for="@Model.clinicSchedul.ClinicName" class="text-danger"></span>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">@Localizer["nameAr"]</label>
+                                    <input asp-for="@Model.clinicSchedul.ClinicNameAr" type="text" class="form-control">
+                                    <span asp-validation-for="@Model.clinicSchedul.ClinicNameAr" class="text-danger"></span>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 mt-1">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    @Localizer["open"]
+                                                </span>
+                                            </div>
+                                            <input asp-for="@Model.clinicSchedul.TimeFrom" type="text" class="form-control">
+                                        </div>
+                                        <span asp-validation-for="@Model.clinicSchedul.TimeFrom" class="text-danger"></span>
+
+
+                                        <!-- /input-group -->
+                                    </div>
+                                    <!-- /.col-lg-6 -->
+                                    <div class="col-lg-6 mt-1">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">@Localizer["close"]</span>
+
+                                            </div>
+                                            <input asp-for="@Model.clinicSchedul.TimeTo" type="text" class="form-control">
+                                        </div>
+                                        <span asp-validation-for="@Model.clinicSchedul.TimeTo" class="text-danger"></span>
+
+                                        <!-- /input-group -->
+                                    </div>
+                                    <!-- /.col-lg-6 -->
+                                </div>
+                            </div>
+
+                            <div class="row days justify-content-around mt-2">
+                                <div class="col-sm-4">
+                                    <!-- checkbox -->
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input asp-for="@Model.clinicSchedul.IsSaturday" class="custom-control-input custom-control-input-primary custom-control-input-outline" type="checkbox">
+                                            <label asp-for="@Model.clinicSchedul.IsSaturday" class="custom-control-label">@Localizer["saturday"].Value</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <input asp-for="@Model.clinicSchedul.IsSunday" class="custom-control-input custom-control-input-primary custom-control-input-outline" type="checkbox">
+                                            <label asp-for="@Model.clinicSchedul.IsSunday" class="custom-control-label">@Localizer["sunday"].Value</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <input asp-for="@Model.clinicSchedul.IsMonday" class="custom-control-input custom-control-input-primary custom-control-input-outline" type="checkbox">
+                                            <label asp-for="@Model.clinicSchedul.IsMonday" class="custom-control-label">@Localizer["monday"].Value</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <input asp-for="@Model.clinicSchedul.IsTuesday" class="custom-control-input custom-control-input-primary custom-control-input-outline" type="checkbox">
+                                            <label asp-for="@Model.clinicSchedul.IsTuesday" class="custom-control-label">@Localizer["tuesday"].Value</label>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <!-- radio -->
+                                    <div class="custom-control custom-checkbox">
+                                        <input asp-for="@Model.clinicSchedul.IsWednesday" class="custom-control-input custom-control-input-primary custom-control-input-outline" type="checkbox">
+                                        <label asp-for="@Model.clinicSchedul.IsWednesday" class="custom-control-label">@Localizer["wednesday"].Value</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input asp-for="@Model.clinicSchedul.IsThursday" class="custom-control-input custom-control-input-primary custom-control-input-outline" type="checkbox">
+                                        <label asp-for="@Model.clinicSchedul.IsThursday" class="custom-control-label">@Localizer["thursday"].Value</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input asp-for="@Model.clinicSchedul.IsFriday" class="custom-control-input custom-control-input-primary custom-control-input-outline" type="checkbox">
+                                        <label asp-for="@Model.clinicSchedul.IsFriday" class="custom-control-label">@Localizer["friday"].Value</label>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer text-center  ">
+
+                            <div>
+                                <button id="Submit" type="submit" class="btn btn-primary  ">@Localizer["submit"]</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+@section Scripts{
+    <script src="~/plugins/sweetalert2/sweetalert2.min.js"></script>
+ @await Html.PartialAsync("_ValidationScriptsPartial.cshtml")
+ }

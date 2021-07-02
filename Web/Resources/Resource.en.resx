@@ -1,0 +1,633 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aboutus" xml:space="preserve">
+    <value>about us</value>
+  </data>
+  <data name="aboutUsDescription" xml:space="preserve">
+    <value>about us description</value>
+  </data>
+  <data name="aboutUsshort" xml:space="preserve">
+    <value>about us short</value>
+  </data>
+  <data name="add new" xml:space="preserve">
+    <value>add new</value>
+  </data>
+  <data name="address" xml:space="preserve">
+    <value>address</value>
+  </data>
+  <data name="arabic" xml:space="preserve">
+    <value>arabic</value>
+  </data>
+  <data name="arabiclang" xml:space="preserve">
+    <value>arabic</value>
+  </data>
+  <data name="AssociatedDoctorsingalaa" xml:space="preserve">
+    <value>Associated Doctors in galaa</value>
+  </data>
+  <data name="Associatedmessage" xml:space="preserve">
+    <value>Expert physician specialists and caring clinical staff provide you with an exceptional patient care is what sets galaa Medical Center  </value>
+  </data>
+  <data name="book" xml:space="preserve">
+    <value>book</value>
+  </data>
+  <data name="book an appointment" xml:space="preserve">
+    <value>book an appointment</value>
+  </data>
+  <data name="book appointment" xml:space="preserve">
+    <value>book appointment</value>
+  </data>
+  <data name="book appointments" xml:space="preserve">
+    <value>book appointments</value>
+  </data>
+  <data name="choicecolor" xml:space="preserve">
+    <value>choice color</value>
+  </data>
+  <data name="choicelanguage" xml:space="preserve">
+    <value>choice language</value>
+  </data>
+  <data name="clinic name" xml:space="preserve">
+    <value>clinic name</value>
+  </data>
+  <data name="Clinic-schedual" xml:space="preserve">
+    <value>Clinic schedual</value>
+  </data>
+  <data name="clinicreservation" xml:space="preserve">
+    <value>clinic reservation</value>
+  </data>
+  <data name="clinicreservationinstructions" xml:space="preserve">
+    <value>clinic reservation instructions</value>
+  </data>
+  <data name="clinics" xml:space="preserve">
+    <value>clinics</value>
+  </data>
+  <data name="clinics schedul" xml:space="preserve">
+    <value>clinics schedul</value>
+  </data>
+  <data name="clinicsreservation" xml:space="preserve">
+    <value>clinics  reservation</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="common question" xml:space="preserve">
+    <value>common question</value>
+  </data>
+  <data name="common questions" xml:space="preserve">
+    <value>common questions</value>
+  </data>
+  <data name="commonquestion" xml:space="preserve">
+    <value>common question</value>
+  </data>
+  <data name="CommonQuestions" xml:space="preserve">
+    <value>common questions</value>
+  </data>
+  <data name="contact book your appointment" xml:space="preserve">
+    <value>book your appointment</value>
+  </data>
+  <data name="contactdetails" xml:space="preserve">
+    <value>Contact Details</value>
+  </data>
+  <data name="contactus" xml:space="preserve">
+    <value>contact us</value>
+  </data>
+  <data name="create" xml:space="preserve">
+    <value>create</value>
+  </data>
+  <data name="degree" xml:space="preserve">
+    <value>degree</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>delete</value>
+  </data>
+  <data name="delete msg" xml:space="preserve">
+    <value>are you sure delete this records</value>
+  </data>
+  <data name="department" xml:space="preserve">
+    <value>department</value>
+  </data>
+  <data name="departments" xml:space="preserve">
+    <value>departments</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>description</value>
+  </data>
+  <data name="descripttion" xml:space="preserve">
+    <value>descripttion</value>
+  </data>
+  <data name="design" xml:space="preserve">
+    <value>design by en/ ahmed salama ali </value>
+  </data>
+  <data name="doctor" xml:space="preserve">
+    <value>doctor</value>
+  </data>
+  <data name="doctorname" xml:space="preserve">
+    <value>doctor name</value>
+  </data>
+  <data name="doctors" xml:space="preserve">
+    <value>doctors</value>
+  </data>
+  <data name="Dr /" xml:space="preserve">
+    <value>Dr /</value>
+  </data>
+  <data name="DuplicateUserName" xml:space="preserve">
+    <value>user name found</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>edit</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>email</value>
+  </data>
+  <data name="email or username" xml:space="preserve">
+    <value>email or username</value>
+  </data>
+  <data name="email-error" xml:space="preserve">
+    <value>this email error</value>
+  </data>
+  <data name="english" xml:space="preserve">
+    <value>english</value>
+  </data>
+  <data name="englishlang" xml:space="preserve">
+    <value>english</value>
+  </data>
+  <data name="error save" xml:space="preserve">
+    <value>error save</value>
+  </data>
+  <data name="facebook link" xml:space="preserve">
+    <value>facebook link</value>
+  </data>
+  <data name="fail password update" xml:space="preserve">
+    <value>failure password update</value>
+  </data>
+  <data name="fail role add" xml:space="preserve">
+    <value>failure role add</value>
+  </data>
+  <data name="fail role update" xml:space="preserve">
+    <value>failure role update</value>
+  </data>
+  <data name="fail sent" xml:space="preserve">
+    <value>fail sent</value>
+  </data>
+  <data name="failure send" xml:space="preserve">
+    <value>failure send</value>
+  </data>
+  <data name="field-required" xml:space="preserve">
+    <value>this filed required</value>
+  </data>
+  <data name="filed-Error" xml:space="preserve">
+    <value>this filed required</value>
+  </data>
+  <data name="findthedoctor" xml:space="preserve">
+    <value>find the doctor</value>
+  </data>
+  <data name="firstname" xml:space="preserve">
+    <value>first name</value>
+  </data>
+  <data name="friday" xml:space="preserve">
+    <value>friday</value>
+  </data>
+  <data name="full name" xml:space="preserve">
+    <value>full name</value>
+  </data>
+  <data name="fullname" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="GeneralSettings" xml:space="preserve">
+    <value>General Settings</value>
+  </data>
+  <data name="haveanyquestion" xml:space="preserve">
+    <value>have any question</value>
+  </data>
+  <data name="history" xml:space="preserve">
+    <value>history</value>
+  </data>
+  <data name="home" xml:space="preserve">
+    <value>home</value>
+  </data>
+  <data name="hospital" xml:space="preserve">
+    <value>hospital</value>
+  </data>
+  <data name="hospitals" xml:space="preserve">
+    <value>hospitals</value>
+  </data>
+  <data name="id not found" xml:space="preserve">
+    <value>this identity not found</value>
+  </data>
+  <data name="image required" xml:space="preserve">
+    <value>image required </value>
+  </data>
+  <data name="isConsultant" xml:space="preserve">
+    <value>Is Consultant</value>
+  </data>
+  <data name="job" xml:space="preserve">
+    <value>job</value>
+  </data>
+  <data name="job Times" xml:space="preserve">
+    <value>job Times</value>
+  </data>
+  <data name="job Title" xml:space="preserve">
+    <value>job Title</value>
+  </data>
+  <data name="last year" xml:space="preserve">
+    <value>last year</value>
+  </data>
+  <data name="lastest news" xml:space="preserve">
+    <value>lastest news</value>
+  </data>
+  <data name="lastname" xml:space="preserve">
+    <value>last name</value>
+  </data>
+  <data name="LinkedIn link" xml:space="preserve">
+    <value>LinkedIn link</value>
+  </data>
+  <data name="log out" xml:space="preserve">
+    <value>log out</value>
+  </data>
+  <data name="login sucessfully" xml:space="preserve">
+    <value>login sucessfully</value>
+  </data>
+  <data name="logout" xml:space="preserve">
+    <value>logout</value>
+  </data>
+  <data name="manager" xml:space="preserve">
+    <value>manager</value>
+  </data>
+  <data name="manager photo" xml:space="preserve">
+    <value>manager photo</value>
+  </data>
+  <data name="manegerName" xml:space="preserve">
+    <value>maneger Name</value>
+  </data>
+  <data name="manegerTitle" xml:space="preserve">
+    <value>maneger Title</value>
+  </data>
+  <data name="manegerWord" xml:space="preserve">
+    <value>maneger Word</value>
+  </data>
+  <data name="mapPath" xml:space="preserve">
+    <value>map Path</value>
+  </data>
+  <data name="max lenght 400 char" xml:space="preserve">
+    <value>أقصى عدد أحرف ٤٠٠</value>
+  </data>
+  <data name="mesg1" xml:space="preserve">
+    <value>Your Email Address Will Not Be Published. Required Fields Are Marked</value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>message</value>
+  </data>
+  <data name="messages" xml:space="preserve">
+    <value>messages</value>
+  </data>
+  <data name="middelname" xml:space="preserve">
+    <value>middel name</value>
+  </data>
+  <data name="monday" xml:space="preserve">
+    <value>monday</value>
+  </data>
+  <data name="more" xml:space="preserve">
+    <value>more</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>name</value>
+  </data>
+  <data name="nameAr" xml:space="preserve">
+    <value>name arabic</value>
+  </data>
+  <data name="nameEn" xml:space="preserve">
+    <value>name english</value>
+  </data>
+  <data name="news" xml:space="preserve">
+    <value>news</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>no</value>
+  </data>
+  <data name="no changes" xml:space="preserve">
+    <value>no changes</value>
+  </data>
+  <data name="no update found" xml:space="preserve">
+    <value>no change found</value>
+  </data>
+  <data name="note" xml:space="preserve">
+    <value>note</value>
+  </data>
+  <data name="open" xml:space="preserve">
+    <value>open from</value>
+  </data>
+  <data name="Oppos" xml:space="preserve">
+    <value>Oppos</value>
+  </data>
+  <data name="our gallery" xml:space="preserve">
+    <value>our gallery</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>password</value>
+  </data>
+  <data name="passwordNotCorrect" xml:space="preserve">
+    <value>password and repassword not equal</value>
+  </data>
+  <data name="phoensecond" xml:space="preserve">
+    <value>phoenSecond</value>
+  </data>
+  <data name="phoenthird" xml:space="preserve">
+    <value>phoenthird</value>
+  </data>
+  <data name="phonemain" xml:space="preserve">
+    <value>phonemain</value>
+  </data>
+  <data name="phonenumber" xml:space="preserve">
+    <value>phone number</value>
+  </data>
+  <data name="plase try again later or feel free to contact us if this problem persists" xml:space="preserve">
+    <value>plase try again later or feel free to contact us if this problem persists</value>
+  </data>
+  <data name="Please enter this filed" xml:space="preserve">
+    <value>Please enter this filed</value>
+  </data>
+  <data name="questionmessage" xml:space="preserve">
+    <value>Our client care managers are on call 24/7 to answer your questions</value>
+  </data>
+  <data name="quickelinks" xml:space="preserve">
+    <value>quicke links</value>
+  </data>
+  <data name="records" xml:space="preserve">
+    <value>records</value>
+  </data>
+  <data name="repassword" xml:space="preserve">
+    <value>repassword</value>
+  </data>
+  <data name="reservationbefore48hours" xml:space="preserve">
+    <value>reservation before 48 hours</value>
+  </data>
+  <data name="reserve the appointment" xml:space="preserve">
+    <value>Reserve The Appointment</value>
+  </data>
+  <data name="rights" xml:space="preserve">
+    <value> All Rights Reserved© 2020-2019 elamal</value>
+  </data>
+  <data name="roles" xml:space="preserve">
+    <value>roles</value>
+  </data>
+  <data name="saturday" xml:space="preserve">
+    <value>saturday</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>search</value>
+  </data>
+  <data name="security" xml:space="preserve">
+    <value>controls</value>
+  </data>
+  <data name="setting" xml:space="preserve">
+    <value>setting</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="show" xml:space="preserve">
+    <value>show</value>
+  </data>
+  <data name="Sign in to start your session" xml:space="preserve">
+    <value>Sign in to start your session</value>
+  </data>
+  <data name="site settings" xml:space="preserve">
+    <value>site settings</value>
+  </data>
+  <data name="siteLogo" xml:space="preserve">
+    <value>site Logo</value>
+  </data>
+  <data name="siteName" xml:space="preserve">
+    <value>site Name</value>
+  </data>
+  <data name="SiteNameadmin" xml:space="preserve">
+    <value>Site Name admin</value>
+  </data>
+  <data name="skills" xml:space="preserve">
+    <value>skills</value>
+  </data>
+  <data name="some field error" xml:space="preserve">
+    <value>some field error</value>
+  </data>
+  <data name="special" xml:space="preserve">
+    <value>special</value>
+  </data>
+  <data name="stopbackground" xml:space="preserve">
+    <value>stop background</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>submit</value>
+  </data>
+  <data name="succss save" xml:space="preserve">
+    <value>success save</value>
+  </data>
+  <data name="succss update" xml:space="preserve">
+    <value>succss update</value>
+  </data>
+  <data name="sucess send" xml:space="preserve">
+    <value>sucess send</value>
+  </data>
+  <data name="sunday" xml:space="preserve">
+    <value>sunday</value>
+  </data>
+  <data name="the services" xml:space="preserve">
+    <value>services</value>
+  </data>
+  <data name="this email incorrect" xml:space="preserve">
+    <value>this email incorrect</value>
+  </data>
+  <data name="this year" xml:space="preserve">
+    <value>this year</value>
+  </data>
+  <data name="thursday" xml:space="preserve">
+    <value>thursday</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>time</value>
+  </data>
+  <data name="timefrom" xml:space="preserve">
+    <value>time from</value>
+  </data>
+  <data name="timeto" xml:space="preserve">
+    <value>time to</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>title</value>
+  </data>
+  <data name="tuesday" xml:space="preserve">
+    <value>tuesday</value>
+  </data>
+  <data name="university" xml:space="preserve">
+    <value>university</value>
+  </data>
+  <data name="upload images" xml:space="preserve">
+    <value>upload images</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>user name</value>
+  </data>
+  <data name="users" xml:space="preserve">
+    <value>users</value>
+  </data>
+  <data name="value" xml:space="preserve">
+    <value>value</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version 1</value>
+  </data>
+  <data name="videoaboutus" xml:space="preserve">
+    <value>video about us</value>
+  </data>
+  <data name="Videolink" xml:space="preserve">
+    <value>videolink</value>
+  </data>
+  <data name="viewdetails" xml:space="preserve">
+    <value>view details</value>
+  </data>
+  <data name="vision" xml:space="preserve">
+    <value>vision</value>
+  </data>
+  <data name="warning" xml:space="preserve">
+    <value>warning</value>
+  </data>
+  <data name="wednesday" xml:space="preserve">
+    <value>wednesday</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>welcome</value>
+  </data>
+  <data name="weLovetohearfromyou" xml:space="preserve">
+    <value>We Love To Hear From You</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>yes</value>
+  </data>
+  <data name="You do not have permission" xml:space="preserve">
+    <value>You do not have permission</value>
+  </data>
+  <data name="youremail" xml:space="preserve">
+    <value>Your Email</value>
+  </data>
+  <data name="yourphone" xml:space="preserve">
+    <value>Your Phone</value>
+  </data>
+  <data name="Youtube link" xml:space="preserve">
+    <value>Youtube link</value>
+  </data>
+</root>
