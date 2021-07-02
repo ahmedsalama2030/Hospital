@@ -1,4 +1,6 @@
 # [Hospital  Website (V1)](http://ahmedsalamafci-001-site1.dtempurl.com/)
+# [Hospital (Dashboard)](http://ahmedsalamafci-001-site1.dtempurl.com/auth/Login?RedirectUrl=%2Fadmin%2Fusers)
+
 
 [![N|Solid](https://res.cloudinary.com/dxb44v7tw/image/upload/v1624804256/hospital/hospital1_bymgv5.jpg)](https://nodesource.com/products/nsolid)
 
